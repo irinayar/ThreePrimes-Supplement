@@ -1,0 +1,38 @@
+== Part 1: exact check of  h*d_exact <= M  at the formula M (worst case m = 2^h), delta = 1/k for k = 2..300 and k = 2^l (l=1..60)
+S={2} tested 351 values of delta: violations 0, max h*d/M = 1.0000
+S={3} tested 351 values of delta: violations 0, max h*d/M = 0.9951
+S={5} tested 351 values of delta: violations 0, max h*d/M = 0.9967
+S={2,3} tested 351 values of delta: violations 0, max h*d/M = 0.9961
+S={3,5} tested 351 values of delta: violations 0, max h*d/M = 0.9972
+S={2,3,5} tested 351 values of delta: violations 0, max h*d/M = 0.9985
+S={2,3,5,7} tested 351 values of delta: violations 0, max h*d/M = 0.9971
+S={101} tested 351 values of delta: violations 0, max h*d/M = 0.9940
+S={2,101} tested 351 values of delta: violations 0, max h*d/M = 0.9932
+== Part 2: end-to-end pigeonhole on multiples of D (exact), small cases
+S={2} delta=1/4 m=8 h=3 D=2 M=7 N0=2^M d=2 m^d<=N0:True pigeon t=8 P_S(D t)<delta:True least t in ball=1
+S={2} delta=1/8 m=16 h=4 D=16 M=8 N0=2^M d=2 m^d<=N0:True pigeon t=1 P_S(D t)<delta:True least t in ball=1
+S={2} delta=1/16 m=32 h=5 D=16 M=14 N0=2^M d=2 m^d<=N0:True pigeon t=32 P_S(D t)<delta:True least t in ball=1
+S={3} delta=1/4 m=8 h=3 D=3 M=4 N0=2^M d=1 m^d<=N0:True pigeon t=1 P_S(D t)<delta:True least t in ball=1
+S={2,3} delta=1/4 m=8 h=3 D=6 M=23 N0=2^M d=7 m^d<=N0:True pigeon t=80 P_S(D t)<delta:True least t in ball=3
+skip S={2,3} k=8: M=37
+S={5} delta=1/6 m=12 h=4 D=5 M=5 N0=2^M d=1 m^d<=N0:True pigeon t=1 P_S(D t)<delta:True least t in ball=1
+S={2,5} delta=1/4 m=8 h=3 D=2 M=23 N0=2^M d=7 m^d<=N0:True pigeon t=280 P_S(D t)<delta:True least t in ball=7
+== Part 3: exponents log2 u_S upper bounds, Scope B (2^(t*^2-h+1)) vs Thm upper' (L) vs old 4s^2h^2, delta = 2^-l
+S={2} l=  4 h=  5  log2 D=      4.0  ScopeB<=      19.0  Upper'<=        30  old<=       100   ratio B/Upper'=0.632  B/l^2=1.185
+S={2} l=  8 h=  9  log2 D=     16.0  ScopeB<=      48.9  Upper'<=        90  old<=       324   ratio B/Upper'=0.543  B/l^2=0.764
+S={2} l= 16 h= 17  log2 D=     64.0  ScopeB<=     144.1  Upper'<=       306  old<=      1156   ratio B/Upper'=0.471  B/l^2=0.563
+S={2} l= 32 h= 33  log2 D=    256.0  ScopeB<=     463.8  Upper'<=      1122  old<=      4356   ratio B/Upper'=0.413  B/l^2=0.453
+S={2} l= 64 h= 65  log2 D=   1024.0  ScopeB<=    1582.6  Upper'<=      4290  old<=     16900   ratio B/Upper'=0.369  B/l^2=0.386
+S={2} l=128 h=129  log2 D=   4096.0  ScopeB<=    5628.1  Upper'<=     16770  old<=     66564   ratio B/Upper'=0.336  B/l^2=0.344
+S={2,3} l=  4 h=  5  log2 D=      5.6  ScopeB<=      67.4  Upper'<=        97  old<=       400   ratio B/Upper'=0.695  B/l^2=4.212
+S={2,3} l=  8 h=  9  log2 D=     30.3  ScopeB<=     202.6  Upper'<=       290  old<=      1296   ratio B/Upper'=0.699  B/l^2=3.166
+S={2,3} l= 16 h= 17  log2 D=    103.6  ScopeB<=     699.6  Upper'<=       986  old<=      4624   ratio B/Upper'=0.710  B/l^2=2.733
+S={2,3} l= 32 h= 33  log2 D=    414.5  ScopeB<=    2588.8  Upper'<=      3613  old<=     17424   ratio B/Upper'=0.717  B/l^2=2.528
+S={2,3} l= 64 h= 65  log2 D=   1658.0  ScopeB<=    9950.4  Upper'<=     13812  old<=     67600   ratio B/Upper'=0.720  B/l^2=2.429
+S={2,3} l=128 h=129  log2 D=   6631.9  ScopeB<=   39006.7  Upper'<=     53992  old<=    266256   ratio B/Upper'=0.722  B/l^2=2.381
+S={2,3,5} l=  4 h=  5  log2 D=      7.9  ScopeB<=     131.6  Upper'<=       181  old<=       900   ratio B/Upper'=0.727  B/l^2=8.223
+S={2,3,5} l=  8 h=  9  log2 D=     39.6  ScopeB<=     411.0  Upper'<=       541  old<=      2916   ratio B/Upper'=0.760  B/l^2=6.422
+S={2,3,5} l= 16 h= 17  log2 D=    124.5  ScopeB<=    1446.9  Upper'<=      1838  old<=     10404   ratio B/Upper'=0.787  B/l^2=5.652
+S={2,3,5} l= 32 h= 33  log2 D=    528.3  ScopeB<=    5401.0  Upper'<=      6738  old<=     39204   ratio B/Upper'=0.802  B/l^2=5.274
+S={2,3,5} l= 64 h= 65  log2 D=   2113.1  ScopeB<=   20871.5  Upper'<=     25763  old<=    152100   ratio B/Upper'=0.810  B/l^2=5.096
+S={2,3,5} l=128 h=129  log2 D=   8452.3  ScopeB<=   82044.5  Upper'<=    100709  old<=    599076   ratio B/Upper'=0.815  B/l^2=5.008

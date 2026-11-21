@@ -1,0 +1,139 @@
+== Part 1: forced vs best exponent vector, delta=1/k; E = log2 D + M (bits). exact check of h*d <= M for both vectors
+S={2}
+  k=       2 h=  1 forced a=[1] E=     2.00 (exact h*d=0<=M=1: True)  best a=[0] E=     2.00 (exact h*d=1<=M=2: True)  gain=0.00 rel=0.0000
+  k=       3 h=  2 forced a=[1] E=     4.00 (exact h*d=2<=M=3: True)  best a=[1] E=     4.00 (exact h*d=2<=M=3: True)  gain=0.00 rel=0.0000
+  k=       5 h=  3 forced a=[1] E=     8.00 (exact h*d=6<=M=7: True)  best a=[1] E=     8.00 (exact h*d=6<=M=7: True)  gain=0.00 rel=0.0000
+  k=      10 h=  4 forced a=[2] E=    12.00 (exact h*d=8<=M=8: True)  best a=[2] E=    12.00 (exact h*d=8<=M=8: True)  gain=0.00 rel=0.0000
+  k=      20 h=  5 forced a=[2] E=    18.00 (exact h*d=10<=M=14: True)  best a=[2] E=    18.00 (exact h*d=10<=M=14: True)  gain=0.00 rel=0.0000
+  k=      50 h=  6 forced a=[3] E=    24.00 (exact h*d=12<=M=15: True)  best a=[3] E=    24.00 (exact h*d=12<=M=15: True)  gain=0.00 rel=0.0000
+  k=      80 h=  7 forced a=[3] E=    32.00 (exact h*d=21<=M=23: True)  best a=[3] E=    32.00 (exact h*d=21<=M=23: True)  gain=0.00 rel=0.0000
+  k=     100 h=  7 forced a=[3] E=    32.00 (exact h*d=21<=M=23: True)  best a=[3] E=    32.00 (exact h*d=21<=M=23: True)  gain=0.00 rel=0.0000
+  k=     200 h=  8 forced a=[4] E=    39.00 (exact h*d=16<=M=23: True)  best a=[4] E=    39.00 (exact h*d=16<=M=23: True)  gain=0.00 rel=0.0000
+  k=     500 h=  9 forced a=[4] E=    48.00 (exact h*d=27<=M=32: True)  best a=[4] E=    48.00 (exact h*d=27<=M=32: True)  gain=0.00 rel=0.0000
+  k=    1000 h= 10 forced a=[5] E=    57.00 (exact h*d=30<=M=32: True)  best a=[5] E=    57.00 (exact h*d=30<=M=32: True)  gain=0.00 rel=0.0000
+  k=    2000 h= 11 forced a=[5] E=    68.00 (exact h*d=33<=M=43: True)  best a=[5] E=    68.00 (exact h*d=33<=M=43: True)  gain=0.00 rel=0.0000
+  k=    5000 h= 13 forced a=[6] E=    90.00 (exact h*d=52<=M=54: True)  best a=[6] E=    90.00 (exact h*d=52<=M=54: True)  gain=0.00 rel=0.0000
+  k=  100000 h= 17 forced a=[8] E=   144.00 (exact h*d=68<=M=80: True)  best a=[8] E=   144.00 (exact h*d=68<=M=80: True)  gain=0.00 rel=0.0000
+  k= 1000000 h= 20 forced a=[10] E=   190.00 (exact h*d=80<=M=90: True)  best a=[10] E=   190.00 (exact h*d=80<=M=90: True)  gain=0.00 rel=0.0000
+S={3}
+  k=       2 h=  1 forced a=[0] E=     2.00 (exact h*d=1<=M=2: True)  best a=[0] E=     2.00 (exact h*d=1<=M=2: True)  gain=0.00 rel=0.0000
+  k=       3 h=  2 forced a=[1] E=     3.58 (exact h*d=0<=M=2: True)  best a=[1] E=     3.58 (exact h*d=0<=M=2: True)  gain=0.00 rel=0.0000
+  k=       5 h=  3 forced a=[1] E=     5.58 (exact h*d=3<=M=4: True)  best a=[1] E=     5.58 (exact h*d=3<=M=4: True)  gain=0.00 rel=0.0000
+  k=      10 h=  4 forced a=[1] E=     9.58 (exact h*d=4<=M=8: True)  best a=[1] E=     9.58 (exact h*d=4<=M=8: True)  gain=0.00 rel=0.0000
+  k=      20 h=  5 forced a=[1] E=    14.58 (exact h*d=10<=M=13: True)  best a=[2] E=    14.34 (exact h*d=5<=M=8: True)  gain=0.25 rel=0.0168
+  k=      50 h=  6 forced a=[2] E=    18.34 (exact h*d=6<=M=12: True)  best a=[2] E=    18.34 (exact h*d=6<=M=12: True)  gain=0.00 rel=0.0000
+  k=      80 h=  7 forced a=[2] E=    23.34 (exact h*d=14<=M=17: True)  best a=[2] E=    23.34 (exact h*d=14<=M=17: True)  gain=0.00 rel=0.0000
+  k=     100 h=  7 forced a=[2] E=    23.34 (exact h*d=14<=M=17: True)  best a=[2] E=    23.34 (exact h*d=14<=M=17: True)  gain=0.00 rel=0.0000
+  k=     200 h=  8 forced a=[2] E=    29.34 (exact h*d=16<=M=23: True)  best a=[3] E=    29.26 (exact h*d=8<=M=15: True)  gain=0.08 rel=0.0026
+  k=     500 h=  9 forced a=[3] E=    35.26 (exact h*d=18<=M=21: True)  best a=[3] E=    35.26 (exact h*d=18<=M=21: True)  gain=0.00 rel=0.0000
+  k=    1000 h= 10 forced a=[3] E=    41.26 (exact h*d=20<=M=27: True)  best a=[3] E=    41.26 (exact h*d=20<=M=27: True)  gain=0.00 rel=0.0000
+  k=    2000 h= 11 forced a=[3] E=    49.26 (exact h*d=33<=M=35: True)  best a=[3] E=    49.26 (exact h*d=33<=M=35: True)  gain=0.00 rel=0.0000
+  k=    5000 h= 13 forced a=[4] E=    64.36 (exact h*d=26<=M=39: True)  best a=[4] E=    64.36 (exact h*d=26<=M=39: True)  gain=0.00 rel=0.0000
+  k=  100000 h= 17 forced a=[5] E=   102.62 (exact h*d=51<=M=63: True)  best a=[5] E=   102.62 (exact h*d=51<=M=63: True)  gain=0.00 rel=0.0000
+  k= 1000000 h= 20 forced a=[6] E=   135.06 (exact h*d=60<=M=78: True)  best a=[6] E=   135.06 (exact h*d=60<=M=78: True)  gain=0.00 rel=0.0000
+S={2,3}
+  k=       2 h=  1 forced a=[1,0] E=     5.00 (exact h*d=2<=M=4: True)  best a=[0,0] E=     5.00 (exact h*d=3<=M=5: True)  gain=0.00 rel=0.0000
+  k=       3 h=  2 forced a=[1,1] E=    12.58 (exact h*d=8<=M=10: True)  best a=[1,1] E=    12.58 (exact h*d=8<=M=10: True)  gain=0.00 rel=0.0000
+  k=       5 h=  3 forced a=[1,1] E=    25.58 (exact h*d=21<=M=23: True)  best a=[1,1] E=    25.58 (exact h*d=21<=M=23: True)  gain=0.00 rel=0.0000
+  k=      10 h=  4 forced a=[2,1] E=    42.58 (exact h*d=32<=M=37: True)  best a=[2,1] E=    42.58 (exact h*d=32<=M=37: True)  gain=0.00 rel=0.0000
+  k=      20 h=  5 forced a=[2,1] E=    66.58 (exact h*d=55<=M=61: True)  best a=[2,2] E=    66.34 (exact h*d=50<=M=56: True)  gain=0.25 rel=0.0037
+  k=      50 h=  6 forced a=[3,2] E=    92.34 (exact h*d=66<=M=77: True)  best a=[3,2] E=    92.34 (exact h*d=66<=M=77: True)  gain=0.00 rel=0.0000
+  k=      80 h=  7 forced a=[3,2] E=   124.34 (exact h*d=105<=M=109: True)  best a=[3,2] E=   124.34 (exact h*d=105<=M=109: True)  gain=0.00 rel=0.0000
+  k=     100 h=  7 forced a=[3,2] E=   124.34 (exact h*d=105<=M=109: True)  best a=[3,2] E=   124.34 (exact h*d=105<=M=109: True)  gain=0.00 rel=0.0000
+  k=     200 h=  8 forced a=[4,2] E=   161.34 (exact h*d=136<=M=139: True)  best a=[4,3] E=   161.26 (exact h*d=128<=M=131: True)  gain=0.08 rel=0.0005
+  k=     500 h=  9 forced a=[4,3] E=   202.26 (exact h*d=162<=M=172: True)  best a=[4,3] E=   202.26 (exact h*d=162<=M=172: True)  gain=0.00 rel=0.0000
+  k=    1000 h= 10 forced a=[5,3] E=   247.26 (exact h*d=200<=M=208: True)  best a=[5,3] E=   247.26 (exact h*d=200<=M=208: True)  gain=0.00 rel=0.0000
+  k=    2000 h= 11 forced a=[5,3] E=   299.26 (exact h*d=242<=M=260: True)  best a=[5,3] E=   299.26 (exact h*d=242<=M=260: True)  gain=0.00 rel=0.0000
+  k=    5000 h= 13 forced a=[6,4] E=   413.36 (exact h*d=338<=M=352: True)  best a=[6,4] E=   413.36 (exact h*d=338<=M=352: True)  gain=0.00 rel=0.0000
+  k=  100000 h= 17 forced a=[8,5] E=   698.62 (exact h*d=578<=M=595: True)  best a=[8,5] E=   698.62 (exact h*d=578<=M=595: True)  gain=0.00 rel=0.0000
+  k= 1000000 h= 20 forced a=[10,6] E=   962.06 (exact h*d=780<=M=805: True)  best a=[10,6] E=   962.06 (exact h*d=780<=M=805: True)  gain=0.00 rel=0.0000
+S={2,5}
+  k=       2 h=  1 forced a=[1,0] E=     4.00 (exact h*d=2<=M=3: True)  best a=[0,0] E=     4.00 (exact h*d=3<=M=4: True)  gain=0.00 rel=0.0000
+  k=       3 h=  2 forced a=[1,0] E=    11.00 (exact h*d=8<=M=10: True)  best a=[1,0] E=    11.00 (exact h*d=8<=M=10: True)  gain=0.00 rel=0.0000
+  k=       5 h=  3 forced a=[1,1] E=    23.32 (exact h*d=18<=M=20: True)  best a=[1,1] E=    23.32 (exact h*d=18<=M=20: True)  gain=0.00 rel=0.0000
+  k=      10 h=  4 forced a=[2,1] E=    37.32 (exact h*d=28<=M=31: True)  best a=[2,1] E=    37.32 (exact h*d=28<=M=31: True)  gain=0.00 rel=0.0000
+  k=      20 h=  5 forced a=[2,1] E=    56.32 (exact h*d=45<=M=50: True)  best a=[2,1] E=    56.32 (exact h*d=45<=M=50: True)  gain=0.00 rel=0.0000
+  k=      50 h=  6 forced a=[3,1] E=    79.32 (exact h*d=66<=M=68: True)  best a=[3,1] E=    79.32 (exact h*d=66<=M=68: True)  gain=0.00 rel=0.0000
+  k=      80 h=  7 forced a=[3,1] E=   107.32 (exact h*d=91<=M=96: True)  best a=[3,2] E=   107.29 (exact h*d=84<=M=89: True)  gain=0.03 rel=0.0003
+  k=     100 h=  7 forced a=[3,1] E=   107.32 (exact h*d=91<=M=96: True)  best a=[3,2] E=   107.29 (exact h*d=84<=M=89: True)  gain=0.03 rel=0.0003
+  k=     200 h=  8 forced a=[4,2] E=   137.29 (exact h*d=104<=M=112: True)  best a=[4,2] E=   137.29 (exact h*d=104<=M=112: True)  gain=0.00 rel=0.0000
+  k=     500 h=  9 forced a=[4,2] E=   172.29 (exact h*d=135<=M=147: True)  best a=[4,2] E=   172.29 (exact h*d=135<=M=147: True)  gain=0.00 rel=0.0000
+  k=    1000 h= 10 forced a=[5,2] E=   210.29 (exact h*d=160<=M=176: True)  best a=[5,2] E=   210.29 (exact h*d=160<=M=176: True)  gain=0.00 rel=0.0000
+  k=    2000 h= 11 forced a=[5,2] E=   254.29 (exact h*d=209<=M=220: True)  best a=[5,2] E=   254.29 (exact h*d=209<=M=220: True)  gain=0.00 rel=0.0000
+  k=    5000 h= 13 forced a=[6,3] E=   350.90 (exact h*d=286<=M=294: True)  best a=[6,3] E=   350.90 (exact h*d=286<=M=294: True)  gain=0.00 rel=0.0000
+  k=  100000 h= 17 forced a=[8,4] E=   592.15 (exact h*d=476<=M=491: True)  best a=[8,4] E=   592.15 (exact h*d=476<=M=491: True)  gain=0.00 rel=0.0000
+  k= 1000000 h= 20 forced a=[10,4] E=   814.15 (exact h*d=640<=M=677: True)  best a=[10,4] E=   814.15 (exact h*d=640<=M=677: True)  gain=0.00 rel=0.0000
+S={3,5}
+  k=       2 h=  1 forced a=[0,0] E=     3.00 (exact h*d=2<=M=3: True)  best a=[0,0] E=     3.00 (exact h*d=2<=M=3: True)  gain=0.00 rel=0.0000
+  k=       3 h=  2 forced a=[1,0] E=     9.58 (exact h*d=6<=M=8: True)  best a=[1,0] E=     9.58 (exact h*d=6<=M=8: True)  gain=0.00 rel=0.0000
+  k=       5 h=  3 forced a=[1,1] E=    17.91 (exact h*d=12<=M=14: True)  best a=[1,1] E=    17.91 (exact h*d=12<=M=14: True)  gain=0.00 rel=0.0000
+  k=      10 h=  4 forced a=[1,1] E=    29.91 (exact h*d=20<=M=26: True)  best a=[1,1] E=    29.91 (exact h*d=20<=M=26: True)  gain=0.00 rel=0.0000
+  k=      20 h=  5 forced a=[1,1] E=    45.91 (exact h*d=35<=M=42: True)  best a=[2,1] E=    45.66 (exact h*d=30<=M=37: True)  gain=0.25 rel=0.0053
+  k=      50 h=  6 forced a=[2,1] E=    63.66 (exact h*d=48<=M=55: True)  best a=[2,1] E=    63.66 (exact h*d=48<=M=55: True)  gain=0.00 rel=0.0000
+  k=      80 h=  7 forced a=[2,1] E=    85.66 (exact h*d=70<=M=77: True)  best a=[2,2] E=    85.63 (exact h*d=63<=M=70: True)  gain=0.03 rel=0.0004
+  k=     100 h=  7 forced a=[2,1] E=    85.66 (exact h*d=70<=M=77: True)  best a=[2,2] E=    85.63 (exact h*d=63<=M=70: True)  gain=0.03 rel=0.0004
+  k=     200 h=  8 forced a=[2,2] E=   109.63 (exact h*d=88<=M=94: True)  best a=[3,2] E=   109.55 (exact h*d=80<=M=86: True)  gain=0.08 rel=0.0007
+  k=     500 h=  9 forced a=[3,2] E=   135.55 (exact h*d=99<=M=112: True)  best a=[3,2] E=   135.55 (exact h*d=99<=M=112: True)  gain=0.00 rel=0.0000
+  k=    1000 h= 10 forced a=[3,2] E=   166.55 (exact h*d=130<=M=143: True)  best a=[3,2] E=   166.55 (exact h*d=130<=M=143: True)  gain=0.00 rel=0.0000
+  k=    2000 h= 11 forced a=[3,2] E=   201.55 (exact h*d=165<=M=178: True)  best a=[3,2] E=   201.55 (exact h*d=165<=M=178: True)  gain=0.00 rel=0.0000
+  k=    5000 h= 13 forced a=[4,3] E=   276.26 (exact h*d=221<=M=230: True)  best a=[4,3] E=   276.26 (exact h*d=221<=M=230: True)  gain=0.00 rel=0.0000
+  k=  100000 h= 17 forced a=[5,4] E=   465.77 (exact h*d=374<=M=389: True)  best a=[5,4] E=   465.77 (exact h*d=374<=M=389: True)  gain=0.00 rel=0.0000
+  k= 1000000 h= 20 forced a=[6,4] E=   639.21 (exact h*d=520<=M=545: True)  best a=[6,4] E=   639.21 (exact h*d=520<=M=545: True)  gain=0.00 rel=0.0000
+S={2,3,5}
+  k=       2 h=  1 forced a=[1,0,0] E=     7.00 (exact h*d=4<=M=6: True)  best a=[0,0,0] E=     7.00 (exact h*d=5<=M=7: True)  gain=0.00 rel=0.0000
+  k=       3 h=  2 forced a=[1,1,0] E=    23.58 (exact h*d=20<=M=21: True)  best a=[1,1,0] E=    23.58 (exact h*d=20<=M=21: True)  gain=0.00 rel=0.0000
+  k=       5 h=  3 forced a=[1,1,1] E=    48.91 (exact h*d=39<=M=44: True)  best a=[1,1,1] E=    48.91 (exact h*d=39<=M=44: True)  gain=0.00 rel=0.0000
+  k=      10 h=  4 forced a=[2,1,1] E=    83.91 (exact h*d=72<=M=76: True)  best a=[2,1,1] E=    83.91 (exact h*d=72<=M=76: True)  gain=0.00 rel=0.0000
+  k=      20 h=  5 forced a=[2,1,1] E=   130.91 (exact h*d=115<=M=123: True)  best a=[2,2,1] E=   130.66 (exact h*d=110<=M=118: True)  gain=0.25 rel=0.0019
+  k=      50 h=  6 forced a=[3,2,1] E=   185.66 (exact h*d=156<=M=168: True)  best a=[3,2,1] E=   185.66 (exact h*d=156<=M=168: True)  gain=0.00 rel=0.0000
+  k=      80 h=  7 forced a=[3,2,1] E=   251.66 (exact h*d=224<=M=234: True)  best a=[3,2,2] E=   251.63 (exact h*d=217<=M=227: True)  gain=0.03 rel=0.0001
+  k=     100 h=  7 forced a=[3,2,1] E=   251.66 (exact h*d=224<=M=234: True)  best a=[3,2,2] E=   251.63 (exact h*d=217<=M=227: True)  gain=0.03 rel=0.0001
+  k=     200 h=  8 forced a=[4,2,2] E=   326.63 (exact h*d=288<=M=295: True)  best a=[4,3,2] E=   326.55 (exact h*d=280<=M=287: True)  gain=0.08 rel=0.0002
+  k=     500 h=  9 forced a=[4,3,2] E=   410.55 (exact h*d=360<=M=371: True)  best a=[4,3,2] E=   410.55 (exact h*d=360<=M=371: True)  gain=0.00 rel=0.0000
+  k=    1000 h= 10 forced a=[5,3,2] E=   504.55 (exact h*d=440<=M=456: True)  best a=[5,3,2] E=   504.55 (exact h*d=440<=M=456: True)  gain=0.00 rel=0.0000
+  k=    2000 h= 11 forced a=[5,3,2] E=   611.55 (exact h*d=539<=M=563: True)  best a=[5,3,2] E=   611.55 (exact h*d=539<=M=563: True)  gain=0.00 rel=0.0000
+  k=    5000 h= 13 forced a=[6,4,3] E=   848.26 (exact h*d=754<=M=766: True)  best a=[6,4,3] E=   848.26 (exact h*d=754<=M=766: True)  gain=0.00 rel=0.0000
+  k=  100000 h= 17 forced a=[8,5,4] E=  1444.77 (exact h*d=1292<=M=1304: True)  best a=[8,5,4] E=  1444.77 (exact h*d=1292<=M=1304: True)  gain=0.00 rel=0.0000
+  k= 1000000 h= 20 forced a=[10,6,4] E=  1994.21 (exact h*d=1760<=M=1800: True)  best a=[10,6,4] E=  1994.21 (exact h*d=1760<=M=1800: True)  gain=0.00 rel=0.0000
+S={2,3,7}
+  k=       2 h=  1 forced a=[1,0,0] E=     7.00 (exact h*d=4<=M=6: True)  best a=[0,0,0] E=     7.00 (exact h*d=5<=M=7: True)  gain=0.00 rel=0.0000
+  k=       3 h=  2 forced a=[1,1,0] E=    22.58 (exact h*d=14<=M=20: True)  best a=[1,1,0] E=    22.58 (exact h*d=14<=M=20: True)  gain=0.00 rel=0.0000
+  k=       5 h=  3 forced a=[1,1,0] E=    48.58 (exact h*d=42<=M=46: True)  best a=[1,1,1] E=    47.39 (exact h*d=39<=M=42: True)  gain=1.19 rel=0.0245
+  k=      10 h=  4 forced a=[2,1,1] E=    80.39 (exact h*d=68<=M=72: True)  best a=[2,1,1] E=    80.39 (exact h*d=68<=M=72: True)  gain=0.00 rel=0.0000
+  k=      20 h=  5 forced a=[2,1,1] E=   124.39 (exact h*d=110<=M=116: True)  best a=[2,2,1] E=   124.15 (exact h*d=105<=M=111: True)  gain=0.25 rel=0.0020
+  k=      50 h=  6 forced a=[3,2,1] E=   176.15 (exact h*d=150<=M=158: True)  best a=[3,2,1] E=   176.15 (exact h*d=150<=M=158: True)  gain=0.00 rel=0.0000
+  k=      80 h=  7 forced a=[3,2,1] E=   239.15 (exact h*d=210<=M=221: True)  best a=[3,2,1] E=   239.15 (exact h*d=210<=M=221: True)  gain=0.00 rel=0.0000
+  k=     100 h=  7 forced a=[3,2,1] E=   239.15 (exact h*d=210<=M=221: True)  best a=[3,2,1] E=   239.15 (exact h*d=210<=M=221: True)  gain=0.00 rel=0.0000
+  k=     200 h=  8 forced a=[4,2,1] E=   311.15 (exact h*d=272<=M=286: True)  best a=[4,3,1] E=   311.07 (exact h*d=264<=M=278: True)  gain=0.08 rel=0.0002
+  k=     500 h=  9 forced a=[4,3,2] E=   391.49 (exact h*d=333<=M=350: True)  best a=[4,3,2] E=   391.49 (exact h*d=333<=M=350: True)  gain=0.00 rel=0.0000
+  k=    1000 h= 10 forced a=[5,3,2] E=   480.49 (exact h*d=420<=M=430: True)  best a=[5,3,2] E=   480.49 (exact h*d=420<=M=430: True)  gain=0.00 rel=0.0000
+  k=    2000 h= 11 forced a=[5,3,2] E=   580.49 (exact h*d=517<=M=530: True)  best a=[5,3,2] E=   580.49 (exact h*d=517<=M=530: True)  gain=0.00 rel=0.0000
+  k=    5000 h= 13 forced a=[6,4,2] E=   806.59 (exact h*d=715<=M=734: True)  best a=[6,4,2] E=   806.59 (exact h*d=715<=M=734: True)  gain=0.00 rel=0.0000
+  k=  100000 h= 17 forced a=[8,5,3] E=  1371.89 (exact h*d=1224<=M=1243: True)  best a=[8,5,3] E=  1371.89 (exact h*d=1224<=M=1243: True)  gain=0.00 rel=0.0000
+  k= 1000000 h= 20 forced a=[10,6,4] E=  1894.98 (exact h*d=1660<=M=1693: True)  best a=[10,6,4] E=  1894.98 (exact h*d=1660<=M=1693: True)  gain=0.00 rel=0.0000
+S={2,3,5,7}
+  k=       2 h=  1 forced a=[1,0,0,0] E=    11.00 (exact h*d=8<=M=10: True)  best a=[0,0,0,0] E=    11.00 (exact h*d=9<=M=11: True)  gain=0.00 rel=0.0000
+  k=       3 h=  2 forced a=[1,1,0,0] E=    36.58 (exact h*d=30<=M=34: True)  best a=[1,1,0,0] E=    36.58 (exact h*d=30<=M=34: True)  gain=0.00 rel=0.0000
+  k=       5 h=  3 forced a=[1,1,1,0] E=    78.91 (exact h*d=69<=M=74: True)  best a=[1,1,1,1] E=    78.71 (exact h*d=66<=M=71: True)  gain=0.19 rel=0.0024
+  k=      10 h=  4 forced a=[2,1,1,1] E=   134.71 (exact h*d=116<=M=124: True)  best a=[2,1,1,1] E=   134.71 (exact h*d=116<=M=124: True)  gain=0.00 rel=0.0000
+  k=      20 h=  5 forced a=[2,1,1,1] E=   208.71 (exact h*d=185<=M=198: True)  best a=[2,2,1,1] E=   208.47 (exact h*d=180<=M=193: True)  gain=0.25 rel=0.0012
+  k=      50 h=  6 forced a=[3,2,1,1] E=   296.47 (exact h*d=264<=M=276: True)  best a=[3,2,1,1] E=   296.47 (exact h*d=264<=M=276: True)  gain=0.00 rel=0.0000
+  k=      80 h=  7 forced a=[3,2,1,1] E=   404.47 (exact h*d=378<=M=384: True)  best a=[3,2,2,1] E=   404.43 (exact h*d=371<=M=377: True)  gain=0.03 rel=0.0001
+  k=     100 h=  7 forced a=[3,2,1,1] E=   404.47 (exact h*d=378<=M=384: True)  best a=[3,2,2,1] E=   404.43 (exact h*d=371<=M=377: True)  gain=0.03 rel=0.0001
+  k=     200 h=  8 forced a=[4,2,2,1] E=   526.43 (exact h*d=480<=M=492: True)  best a=[4,3,2,1] E=   526.36 (exact h*d=472<=M=484: True)  gain=0.08 rel=0.0001
+  k=     500 h=  9 forced a=[4,3,2,2] E=   662.78 (exact h*d=594<=M=612: True)  best a=[4,3,2,2] E=   662.78 (exact h*d=594<=M=612: True)  gain=0.00 rel=0.0000
+  k=    1000 h= 10 forced a=[5,3,2,2] E=   815.78 (exact h*d=730<=M=756: True)  best a=[5,3,2,2] E=   815.78 (exact h*d=730<=M=756: True)  gain=0.00 rel=0.0000
+  k=    2000 h= 11 forced a=[5,3,2,2] E=   986.78 (exact h*d=902<=M=927: True)  best a=[5,3,2,2] E=   986.78 (exact h*d=902<=M=927: True)  gain=0.00 rel=0.0000
+  k=    5000 h= 13 forced a=[6,4,3,2] E=  1374.49 (exact h*d=1261<=M=1281: True)  best a=[6,4,3,2] E=  1374.49 (exact h*d=1261<=M=1281: True)  gain=0.00 rel=0.0000
+  k=  100000 h= 17 forced a=[8,5,4,3] E=  2343.04 (exact h*d=2125<=M=2177: True)  best a=[8,5,4,3] E=  2343.04 (exact h*d=2125<=M=2177: True)  gain=0.00 rel=0.0000
+  k= 1000000 h= 20 forced a=[10,6,4,4] E=  3238.13 (exact h*d=2980<=M=2999: True)  best a=[10,6,4,4] E=  3238.13 (exact h*d=2980<=M=2999: True)  gain=0.00 rel=0.0000
+Summary: rows=120, exact-count failures=0, rows with zero gain=98, rows where best has a coordinate below the forced one=6, max gain=1.19 bits, max relative gain=0.0245
+== Part 2: end-to-end pigeonhole on multiples of D with the BEST (non-forced) vector, exact integers, small cases (M <= 24)
+S={2} delta=1/4 best a=[1] (forced [1]) D=2 M=3 d=1 m^d<=2^M:True pigeon t=1 t<=2^M and P_S(Dt)<delta: True
+S={2} delta=1/8 best a=[1] (forced [2]) D=2 M=7 d=2 m^d<=2^M:True pigeon t=8 t<=2^M and P_S(Dt)<delta: True
+S={3} delta=1/2 best a=[0] (forced [0]) D=1 M=2 d=1 m^d<=2^M:True pigeon t=1 t<=2^M and P_S(Dt)<delta: True
+S={3,5} delta=1/2 best a=[0,0] (forced [0,0]) D=1 M=3 d=2 m^d<=2^M:True pigeon t=1 t<=2^M and P_S(Dt)<delta: True
+S={2,3} delta=1/2 best a=[0,0] (forced [1,0]) D=1 M=5 d=3 m^d<=2^M:True pigeon t=2 t<=2^M and P_S(Dt)<delta: True
+S={2,3} delta=1/3 best a=[1,1] (forced [1,1]) D=6 M=10 d=3 m^d<=2^M:True pigeon t=3 t<=2^M and P_S(Dt)<delta: True
+S={2,5} delta=1/2 best a=[0,0] (forced [1,0]) D=1 M=4 d=3 m^d<=2^M:True pigeon t=2 t<=2^M and P_S(Dt)<delta: True
+S={2,3,5} delta=1/2 best a=[0,0,0] (forced [1,0,0]) D=1 M=7 d=5 m^d<=2^M:True pigeon t=6 t<=2^M and P_S(Dt)<delta: True

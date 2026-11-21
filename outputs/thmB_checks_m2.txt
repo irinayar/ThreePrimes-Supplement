@@ -1,0 +1,66 @@
+== Part 1: exact h*d <= M, m = k, h = ceil(log2 k), forced exponents, worst case m = 2^h
+S={2} tested 351 values of delta: violations 0, max h*d/M = 1.0000
+S={3} tested 351 values of delta: violations 0, max h*d/M = 0.9951
+S={5} tested 351 values of delta: violations 0, max h*d/M = 0.9967
+S={2,3} tested 351 values of delta: violations 0, max h*d/M = 0.9961
+S={3,5} tested 351 values of delta: violations 0, max h*d/M = 0.9976
+S={2,3,5} tested 351 values of delta: violations 0, max h*d/M = 0.9985
+S={2,3,5,7} tested 351 values of delta: violations 0, max h*d/M = 0.9971
+S={101} tested 351 values of delta: violations 0, max h*d/M = 0.9940
+S={2,101} tested 351 values of delta: violations 0, max h*d/M = 0.9932
+S={2,3,5,7,11,13} tested 351 values of delta: violations 0, max h*d/M = 0.9987
+== Part 2: end-to-end pigeonhole on multiples of D, m = k (exact), strict test P_S(Dt) < 1/k
+S={2} delta=1/3 m=3 h=2 D=2 M=3 d=1 m^d<=2^M:True t=1 t<=2^M and P_S(Dt)<delta:True
+S={2} delta=1/4 m=4 h=2 D=2 M=3 d=1 m^d<=2^M:True t=1 t<=2^M and P_S(Dt)<delta:True
+S={2} delta=1/5 m=5 h=3 D=2 M=7 d=2 m^d<=2^M:True t=1 t<=2^M and P_S(Dt)<delta:True
+S={2} delta=1/8 m=8 h=3 D=16 M=4 d=1 m^d<=2^M:True t=1 t<=2^M and P_S(Dt)<delta:True
+S={3} delta=1/3 m=3 h=2 D=3 M=2 d=0 m^d<=2^M:True t=1 t<=2^M and P_S(Dt)<delta:True
+S={3} delta=1/4 m=4 h=2 D=3 M=2 d=0 m^d<=2^M:True t=1 t<=2^M and P_S(Dt)<delta:True
+S={5} delta=1/6 m=6 h=3 D=5 M=3 d=0 m^d<=2^M:True t=1 t<=2^M and P_S(Dt)<delta:True
+S={2,3} delta=1/3 m=3 h=2 D=6 M=10 d=3 m^d<=2^M:True t=3 t<=2^M and P_S(Dt)<delta:True
+S={2,3} delta=1/4 m=4 h=2 D=6 M=10 d=4 m^d<=2^M:True t=3 t<=2^M and P_S(Dt)<delta:True
+S={2,5} delta=1/3 m=3 h=2 D=2 M=10 d=4 m^d<=2^M:True t=2 t<=2^M and P_S(Dt)<delta:True
+S={2,5} delta=1/4 m=4 h=2 D=2 M=10 d=4 m^d<=2^M:True t=8 t<=2^M and P_S(Dt)<delta:True
+S={2,3} delta=1/5 m=5 h=3 D=6 M=23 d=7 m^d<=2^M:True t=13 t<=2^M and P_S(Dt)<delta:True
+== Part 3: delta=1/k, k=2..5000: exponents log2 D + M (Thm 3.1) and L (Thm 2.1); old h = ceil(log2 2k), new h = ceil(log2 k); decimal
+S={2} rows=4999 B_new>A_new violations=0 max B_new/A_new=1.000  E_new/E_old: min=0.500 max=0.872
+S={3} rows=4999 B_new>A_new violations=0 max B_new/A_new=1.000  E_new/E_old: min=0.500 max=0.877
+S={5} rows=4999 B_new>A_new violations=0 max B_new/A_new=0.500  E_new/E_old: min=0.333 max=0.893
+S={101} rows=4999 B_new>A_new violations=0 max B_new/A_new=0.500  E_new/E_old: min=0.500 max=0.932
+S={2,3} rows=4999 B_new>A_new violations=0 max B_new/A_new=0.714  E_new/E_old: min=0.385 max=0.862
+S={3,5} rows=4999 B_new>A_new violations=0 max B_new/A_new=0.737  E_new/E_old: min=0.273 max=0.865
+S={2,3,5} rows=4999 B_new>A_new violations=0 max B_new/A_new=0.776  E_new/E_old: min=0.292 max=0.862
+S={3,5,7} rows=4999 B_new>A_new violations=0 max B_new/A_new=0.787  E_new/E_old: min=0.316 max=0.863
+S={2,3,5,7} rows=4999 B_new>A_new violations=0 max B_new/A_new=0.813  E_new/E_old: min=0.289 max=0.861
+S={2,3,5,7,11,13} rows=4999 B_new>A_new violations=0 max B_new/A_new=0.850  E_new/E_old: min=0.265 max=0.862
+S={2,3} k=20 hold=6 Eold=97.58  hnew=5 Enew=66.58
+S={2,3} k=80 hold=8 Eold=163.34  hnew=7 Enew=124.34
+S={2,3} k=500 hold=10 Eold=249.26  hnew=9 Enew=202.26
+S={2,3} k=5000 hold=14 Eold=479.36  hnew=13 Enew=413.36
+S={2,3,5} k=20 hold=6 Eold=189.91  hnew=5 Enew=130.91
+S={2,3,5} k=80 hold=8 Eold=330.66  hnew=7 Enew=251.66
+S={2,3,5} k=500 hold=10 Eold=506.55  hnew=9 Enew=410.55
+S={2,3,5} k=5000 hold=14 Eold=984.26  hnew=13 Enew=848.26
+== Part 4: k=2^l, E with h=l+1 (m=k+1) vs h=l (m=k)
+S={2,3} k=2^4 E(h=l+1)=66.58 E(h=l)=42.58 ratio=0.640
+S={2,3} k=2^6 E(h=l+1)=124.34 E(h=l)=92.34 ratio=0.743
+S={2,3} k=2^8 E(h=l+1)=202.26 E(h=l)=161.26 ratio=0.797
+S={2,3} k=2^10 E(h=l+1)=299.26 E(h=l)=247.26 ratio=0.826
+S={2,3} k=2^14 E(h=l+1)=548.36 E(h=l)=477.36 ratio=0.871
+S={2,3} k=2^20 E(h=l+1)=1060.06 E(h=l)=962.06 ratio=0.908
+S={2,3,5} k=2^4 E(h=l+1)=130.91 E(h=l)=83.91 ratio=0.641
+S={2,3,5} k=2^6 E(h=l+1)=251.66 E(h=l)=185.66 ratio=0.738
+S={2,3,5} k=2^8 E(h=l+1)=410.55 E(h=l)=326.55 ratio=0.795
+S={2,3,5} k=2^10 E(h=l+1)=611.55 E(h=l)=504.55 ratio=0.825
+S={2,3,5} k=2^14 E(h=l+1)=1128.26 E(h=l)=982.26 ratio=0.871
+S={2,3,5} k=2^20 E(h=l+1)=2199.21 E(h=l)=1994.21 ratio=0.907
+== Part 5: delta=2^-l, a_p = a_p(delta) (exact, BigInteger): log2 bound of Thm 3.1 = max(Delta, t*^2-h+1), Thm 2.1 = ceil(a_S h^2 + a_S h), old 4 s^2 (l+1)^2; h = l (v6) and h = l+1 (v5 table)
+S={2} l=8:  h=8: Thm3.1 39.6  Thm2.1 72  (coef of l^2 in Thm3.1: 0.619)  h=9: Thm3.1 48.9  Thm2.1 90  (coef of l^2 in Thm3.1: 0.764)  old 4s^2(l+1)^2 = 324
+S={2} l=32:  h=32: Thm3.1 438.0  Thm2.1 1056  (coef of l^2 in Thm3.1: 0.428)  h=33: Thm3.1 463.8  Thm2.1 1122  (coef of l^2 in Thm3.1: 0.453)  old 4s^2(l+1)^2 = 4356
+S={2} l=128:  h=128: Thm3.1 5545.2  Thm2.1 16512  (coef of l^2 in Thm3.1: 0.338)  h=129: Thm3.1 5628.1  Thm2.1 16770  (coef of l^2 in Thm3.1: 0.344)  old 4s^2(l+1)^2 = 66564
+S={2,3} l=8:  h=8: Thm3.1 161.7  Thm2.1 232  (coef of l^2 in Thm3.1: 2.527)  h=9: Thm3.1 202.6  Thm2.1 290  (coef of l^2 in Thm3.1: 3.166)  old 4s^2(l+1)^2 = 1296
+S={2,3} l=32:  h=32: Thm3.1 2434.5  Thm2.1 3400  (coef of l^2 in Thm3.1: 2.377)  h=33: Thm3.1 2588.8  Thm2.1 3613  (coef of l^2 in Thm3.1: 2.528)  old 4s^2(l+1)^2 = 17424
+S={2,3} l=128:  h=128: Thm3.1 38403.9  Thm2.1 53162  (coef of l^2 in Thm3.1: 2.344)  h=129: Thm3.1 39006.7  Thm2.1 53992  (coef of l^2 in Thm3.1: 2.381)  old 4s^2(l+1)^2 = 266256
+S={2,3,5} l=8:  h=8: Thm3.1 326.7  Thm2.1 433  (coef of l^2 in Thm3.1: 5.104)  h=9: Thm3.1 411.0  Thm2.1 541  (coef of l^2 in Thm3.1: 6.422)  old 4s^2(l+1)^2 = 2916
+S={2,3,5} l=32:  h=32: Thm3.1 5078.9  Thm2.1 6342  (coef of l^2 in Thm3.1: 4.960)  h=33: Thm3.1 5401.0  Thm2.1 6738  (coef of l^2 in Thm3.1: 5.274)  old 4s^2(l+1)^2 = 39204
+S={2,3,5} l=128:  h=128: Thm3.1 80777.7  Thm2.1 99160  (coef of l^2 in Thm3.1: 4.930)  h=129: Thm3.1 82044.5  Thm2.1 100709  (coef of l^2 in Thm3.1: 5.008)  old 4s^2(l+1)^2 = 599076

@@ -1,0 +1,49 @@
+sanity S={2,3} k=4: least=18 (expected 18, 480, 392688)
+sanity S={2,3} k=8: least=480 (expected 18, 480, 392688)
+sanity S={2,3} k=16: least=392688 (expected 18, 480, 392688)
+   check: log2 u=1.0 <= ThmB 25.0, <= Upper 37: bounds ok
+S={2,3,5} delta=1/2: u=2  D_S=2  u/D=1  ln u=0.69  ln u/L^2=1.443  [0.0s, X<=1000]
+   check: log2 u=5.9 <= ThmB 51.2, <= Upper 73: bounds ok
+S={2,3,5} delta=1/3: u=60  D_S=6  u/D=10  ln u=4.09  ln u/L^2=3.392  [0.0s, X<=1000]
+   check: log2 u=6.0 <= ThmB 51.2, <= Upper 73: bounds ok
+S={2,3,5} delta=1/4: u=66  D_S=6  u/D=11  ln u=4.19  ln u/L^2=2.180  [0.0s, X<=1000]
+   check: log2 u=10.9 <= ThmB 86.8, <= Upper 121: bounds ok
+S={2,3,5} delta=1/5: u=1950  D_S=30  u/D=65  ln u=7.58  ln u/L^2=2.925  [0.0s, X<=16000]
+   check: log2 u=11.6 <= ThmB 86.8, <= Upper 121: bounds ok
+S={2,3,5} delta=1/6: u=3090  D_S=30  u/D=103  ln u=8.04  ln u/L^2=2.503  [0.0s, X<=16000]
+   check: log2 u=17.1 <= ThmB 86.8, <= Upper 121: bounds ok
+S={2,3,5} delta=1/7: u=138750  D_S=30  u/D=4625  ln u=11.84  ln u/L^2=3.127  [0.0s, X<=256000]
+   check: log2 u=20.9 <= ThmB 84.7, <= Upper 121: bounds ok
+S={2,3,5} delta=1/8: u=1970640  D_S=240  u/D=8211  ln u=14.49  ln u/L^2=3.352  [0.0s, X<=4096000]
+   check: log2 u=27.0 <= ThmB 131.6, <= Upper 181: bounds ok
+S={2,3,5} delta=1/9: u=130675680  D_S=240  u/D=544482  ln u=18.69  ln u/L^2=3.871  [0.1s, X<=1048576000]
+   check: log2 u=27.3 <= ThmB 131.6, <= Upper 181: bounds ok
+S={2,3,5} delta=1/10: u=169866240  D_S=240  u/D=707776  ln u=18.95  ln u/L^2=3.574  [0.0s, X<=1048576000]
+   check: log2 u=28.2 <= ThmB 131.6, <= Upper 181: bounds ok
+S={2,3,5} delta=1/11: u=300814320  D_S=240  u/D=1.25339E+06  ln u=19.52  ln u/L^2=3.395  [0.0s, X<=1048576000]
+   check: log2 u=29.2 <= ThmB 131.6, <= Upper 181: bounds ok
+S={2,3,5} delta=1/12: u=601551840  D_S=240  u/D=2.50647E+06  ln u=20.22  ln u/L^2=3.274  [0.0s, X<=1048576000]
+   check: log2 u=29.2 <= ThmB 131.6, <= Upper 181: bounds ok
+S={2,3,5} delta=1/13: u=601551840  D_S=240  u/D=2.50647E+06  ln u=20.22  ln u/L^2=3.073  [0.0s, X<=1048576000]
+   check: log2 u=30.5 <= ThmB 131.6, <= Upper 181: bounds ok
+S={2,3,5} delta=1/14: u=1507856880  D_S=240  u/D=6.28274E+06  ln u=21.13  ln u/L^2=3.034  [0.8s, X<=16777216000]
+   check: log2 u=31.5 <= ThmB 131.6, <= Upper 181: bounds ok
+S={2,3,5} delta=1/15: u=3054762480  D_S=240  u/D=1.27282E+07  ln u=21.84  ln u/L^2=2.978  [0.6s, X<=16777216000]
+   check: log2 u=31.5 <= ThmB 131.6, <= Upper 181: bounds ok
+S={2,3,5} delta=1/16: u=3054762480  D_S=240  u/D=1.27282E+07  ln u=21.84  ln u/L^2=2.841  [0.5s, X<=16777216000]
+   check: log2 u=31.5 <= ThmB 190.5, <= Upper 253: bounds ok
+S={2,3,5} delta=1/17: u=3054762480  D_S=240  u/D=1.27282E+07  ln u=21.84  ln u/L^2=2.721  [0.4s, X<=16777216000]
+   check: log2 u=31.5 <= ThmB 190.5, <= Upper 253: bounds ok
+S={2,3,5} delta=1/18: u=3054762480  D_S=240  u/D=1.27282E+07  ln u=21.84  ln u/L^2=2.614  [0.3s, X<=16777216000]
+   check: log2 u=31.5 <= ThmB 190.5, <= Upper 253: bounds ok
+S={2,3,5} delta=1/19: u=3054762480  D_S=240  u/D=1.27282E+07  ln u=21.84  ln u/L^2=2.519  [0.3s, X<=16777216000]
+   check: log2 u=31.5 <= ThmB 190.5, <= Upper 253: bounds ok
+S={2,3,5} delta=1/20: u=3054762480  D_S=240  u/D=1.27282E+07  ln u=21.84  ln u/L^2=2.434  [0.3s, X<=16777216000]
+   check: log2 u=31.5 <= ThmB 190.5, <= Upper 253: bounds ok
+S={2,3,5} delta=1/21: u=3054762480  D_S=240  u/D=1.27282E+07  ln u=21.84  ln u/L^2=2.356  [0.2s, X<=16777216000]
+   check: log2 u=31.5 <= ThmB 190.5, <= Upper 253: bounds ok
+S={2,3,5} delta=1/22: u=3054762480  D_S=240  u/D=1.27282E+07  ln u=21.84  ln u/L^2=2.286  [0.2s, X<=16777216000]
+   check: log2 u=43.8 <= ThmB 190.5, <= Upper 253: bounds ok
+S={2,3,5} delta=1/23: u=15258341867520  D_S=240  u/D=6.35764E+10  ln u=30.36  ln u/L^2=3.088  [5.0s, X<=68719476736000]
+   check: log2 u=43.8 <= ThmB 190.5, <= Upper 253: bounds ok
+S={2,3,5} delta=1/24: u=15258341867520  D_S=240  u/D=6.35764E+10  ln u=30.36  ln u/L^2=3.006  [4.5s, X<=68719476736000]

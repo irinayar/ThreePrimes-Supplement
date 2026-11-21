@@ -1,0 +1,7 @@
+sanity p=2 R=20 X=100000: brute=59 dfs=59
+sanity p=3 R=20 X=100000: brute=413 dfs=413
+sanity p=2 R=5 X=5000: brute=371 dfs=371
+sanity p=3 R=7 X=50000: brute=1208 dfs=1208
+sanity p=5 R=10 X=200000: brute=7813 dfs=7813
+X=1e12, r=1/20: |A| (prime 3) = 48511238   |B'| (prime 2) = 5912303   [0.6s]
+X=1e15, r=1/40: |A| (prime 3) = 1647676973   |B'| (prime 2) = 11058338   [0.8s]

@@ -1,0 +1,10 @@
+S={2}: delta=1/k, k=2..5000 (4999): ScopeB worse than Upper' in 0 cases (first k=-1); max ratio B/Upper' = 0.805
+S={3}: delta=1/k, k=2..5000 (4999): ScopeB worse than Upper' in 0 cases (first k=-1); max ratio B/Upper' = 0.806
+S={2,3}: delta=1/k, k=2..5000 (4999): ScopeB worse than Upper' in 0 cases (first k=-1); max ratio B/Upper' = 0.718
+S={3,5}: delta=1/k, k=2..5000 (4999): ScopeB worse than Upper' in 0 cases (first k=-1); max ratio B/Upper' = 0.853
+S={2,3,5}: delta=1/k, k=2..5000 (4999): ScopeB worse than Upper' in 0 cases (first k=-1); max ratio B/Upper' = 0.783
+S={2,3,5,7}: delta=1/k, k=2..5000 (4999): ScopeB worse than Upper' in 0 cases (first k=-1); max ratio B/Upper' = 0.818
+S={2,5,7}: delta=1/k, k=2..5000 (4999): ScopeB worse than Upper' in 0 cases (first k=-1); max ratio B/Upper' = 0.780
+S={101}: delta=1/k, k=2..5000 (4999): ScopeB worse than Upper' in 0 cases (first k=-1); max ratio B/Upper' = 0.406
+S={2,101}: delta=1/k, k=2..5000 (4999): ScopeB worse than Upper' in 0 cases (first k=-1); max ratio B/Upper' = 0.763
+S={2,3,5,7,11,13}: delta=1/k, k=2..5000 (4999): ScopeB worse than Upper' in 0 cases (first k=-1); max ratio B/Upper' = 0.855

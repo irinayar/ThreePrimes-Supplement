@@ -1,0 +1,37 @@
+== Part A: exact integer check  h*d_exact(L+h) <= L at L = ceil(a h^2 + a h), a = max(1,c'^2), m = 2^h (worst case), h = 2..120
+S={2} c'=1.0000 a=1.0000 4s^2/a=4.00  all ok=True firstBad=-1 max h*d/L=0.9917 (h tested 119)
+S={3} c'=0.7943 a=1.0000 4s^2/a=4.00  all ok=True firstBad=-1 max h*d/L=0.7941 (h tested 119)
+S={5} c'=0.6563 a=1.0000 4s^2/a=4.00  all ok=True firstBad=-1 max h*d/L=0.6559 (h tested 119)
+S={2,3} c'=1.7943 a=3.2196 4s^2/a=4.97  all ok=True firstBad=-1 max h*d/L=0.9956 (h tested 119)
+S={3,5} c'=1.4506 a=2.1042 4s^2/a=7.60  all ok=True firstBad=-1 max h*d/L=0.9963 (h tested 119)
+S={2,3,5} c'=2.4506 a=6.0053 4s^2/a=5.99  all ok=True firstBad=-1 max h*d/L=0.9950 (h tested 119)
+S={2,3,5,7} c'=3.0474 a=9.2867 4s^2/a=6.89  all ok=True firstBad=-1 max h*d/L=0.9953 (h tested 119)
+S={3,5,7} c'=2.0474 a=4.1919 4s^2/a=8.59  all ok=True firstBad=-1 max h*d/L=0.9957 (h tested 119)
+S={101} c'=0.3875 a=1.0000 4s^2/a=4.00  all ok=True firstBad=-1 max h*d/L=0.3875 (h tested 119)
+S={2,3,5,7,11,13} c'=4.1049 a=16.8501 4s^2/a=8.55  all ok=True firstBad=-1 max h*d/L=0.9948 (h tested 119)
+== Part A': sensitivity: same test with a replaced by 0.8 a (should fail somewhere if the constant is near-sharp for this proof)
+S={2} first failing h with 0.8a: 5
+S={3} first failing h with 0.8a: -1
+S={5} first failing h with 0.8a: -1
+S={2,3} first failing h with 0.8a: 5
+S={3,5} first failing h with 0.8a: 7
+S={2,3,5} first failing h with 0.8a: 6
+S={2,3,5,7} first failing h with 0.8a: 7
+S={3,5,7} first failing h with 0.8a: 7
+S={101} first failing h with 0.8a: -1
+S={2,3,5,7,11,13} first failing h with 0.8a: 6
+== Part B: end-to-end pigeonhole, exact integer arithmetic
+S={2} m=4 h=2 L=6 N=64 d=2 m^d<=N:True pigeon k=2 k<=N:True P_S(k)<1/m (exact):True least k with P_S<1/m = 2
+S={2} m=5 h=3 L=12 N=4096 d=3 m^d<=N:True pigeon k=2 k<=N:True P_S(k)<1/m (exact):True least k with P_S<1/m = 2
+S={2} m=6 h=3 L=12 N=4096 d=3 m^d<=N:True pigeon k=2 k<=N:True P_S(k)<1/m (exact):True least k with P_S<1/m = 2
+S={2} m=7 h=3 L=12 N=4096 d=3 m^d<=N:True pigeon k=2 k<=N:True P_S(k)<1/m (exact):True least k with P_S<1/m = 2
+S={2} m=8 h=3 L=12 N=4096 d=3 m^d<=N:True pigeon k=16 k<=N:True P_S(k)<1/m (exact):True least k with P_S<1/m = 16
+S={2} m=9 h=4 L=20 N=1048576 d=4 m^d<=N:True pigeon k=16 k<=N:True P_S(k)<1/m (exact):True least k with P_S<1/m = 16
+S={2} m=10 h=4 L=20 N=1048576 d=4 m^d<=N:True pigeon k=16 k<=N:True P_S(k)<1/m (exact):True least k with P_S<1/m = 16
+S={2} m=11 h=4 L=20 N=1048576 d=4 m^d<=N:True pigeon k=16 k<=N:True P_S(k)<1/m (exact):True least k with P_S<1/m = 16
+S={2} m=12 h=4 L=20 N=1048576 d=4 m^d<=N:True pigeon k=16 k<=N:True P_S(k)<1/m (exact):True least k with P_S<1/m = 16
+S={2} m=13 h=4 L=20 N=1048576 d=4 m^d<=N:True pigeon k=16 k<=N:True P_S(k)<1/m (exact):True least k with P_S<1/m = 16
+S={2} m=14 h=4 L=20 N=1048576 d=4 m^d<=N:True pigeon k=16 k<=N:True P_S(k)<1/m (exact):True least k with P_S<1/m = 16
+S={2} m=15 h=4 L=20 N=1048576 d=4 m^d<=N:True pigeon k=16 k<=N:True P_S(k)<1/m (exact):True least k with P_S<1/m = 16
+S={2} m=16 h=4 L=20 N=1048576 d=4 m^d<=N:True pigeon k=16 k<=N:True P_S(k)<1/m (exact):True least k with P_S<1/m = 16
+S={2,3} m=4 h=2 L=20 N=1048576 d=7 m^d<=N:True pigeon k=18 k<=N:True P_S(k)<1/m (exact):True least k with P_S<1/m = 18

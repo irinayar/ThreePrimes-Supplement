@@ -1,0 +1,5 @@
+R=20 X=200000: |A|=788/788 |B|=137/137 E brute=174268 E new=174268 equal=True (cand 570, surv 6, 0.0s)
+R=20 X=1000000: |A|=3788/3788 |B|=605/605 E brute=6271596 E new=6271596 equal=True (cand 2712, surv 26, 0.0s)
+R=10 X=300000: |A|=3798/3798 |B|=788/788 E brute=26883236 E new=26883236 equal=True (cand 8950, surv 115, 0.0s)
+R=7 X=100000: |A|=2552/2552 |B|=1499/1499 E brute=111002556 E new=111002556 equal=True (cand 10183, surv 610, 0.0s)
+R=20 X=3000000: |A|=8213/8213 |B|=995/995 E brute=36476611 E new=36476611 equal=True (cand 7962, surv 45, 0.0s)

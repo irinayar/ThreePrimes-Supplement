@@ -1,0 +1,28 @@
+== Part 1: delta = 1/k, eta = log2 k, k = 2..5000; covered = (ceil(Delta) <= eta*alpha)
+S={2} rows=4999 eta*alpha-Delta<1: 2; not covered: 0; violations of D2^M<=2^L among covered (and of t*^2<=L+eta-c): 0; violations of D2^M<=2^L overall: 0
+S={3} rows=4999 eta*alpha-Delta<1: 5; not covered: 1; violations of D2^M<=2^L among covered (and of t*^2<=L+eta-c): 0; violations of D2^M<=2^L overall: 0
+S={5} rows=4999 eta*alpha-Delta<1: 8; not covered: 3; violations of D2^M<=2^L among covered (and of t*^2<=L+eta-c): 0; violations of D2^M<=2^L overall: 0
+S={101} rows=4999 eta*alpha-Delta<1: 200; not covered: 27; violations of D2^M<=2^L among covered (and of t*^2<=L+eta-c): 0; violations of D2^M<=2^L overall: 0
+S={2,3} rows=4999 eta*alpha-Delta<1: 2; not covered: 0; violations of D2^M<=2^L among covered (and of t*^2<=L+eta-c): 0; violations of D2^M<=2^L overall: 0
+S={3,5} rows=4999 eta*alpha-Delta<1: 4; not covered: 1; violations of D2^M<=2^L among covered (and of t*^2<=L+eta-c): 0; violations of D2^M<=2^L overall: 0
+S={2,3,5} rows=4999 eta*alpha-Delta<1: 2; not covered: 0; violations of D2^M<=2^L among covered (and of t*^2<=L+eta-c): 0; violations of D2^M<=2^L overall: 0
+S={3,5,7} rows=4999 eta*alpha-Delta<1: 4; not covered: 1; violations of D2^M<=2^L among covered (and of t*^2<=L+eta-c): 0; violations of D2^M<=2^L overall: 0
+S={2,3,5,7} rows=4999 eta*alpha-Delta<1: 2; not covered: 0; violations of D2^M<=2^L among covered (and of t*^2<=L+eta-c): 0; violations of D2^M<=2^L overall: 0
+S={2,3,5,7,11,13} rows=4999 eta*alpha-Delta<1: 2; not covered: 0; violations of D2^M<=2^L among covered (and of t*^2<=L+eta-c): 0; violations of D2^M<=2^L overall: 0
+== Part 2: random real eta >= log2 m, random sets of 1-5 primes among 28 primes up to 1009, m in [2, 20000), 3000000 draws, seed 99
+tested=3000000 covered=2999359 (violations 0) not covered=641; violations of D2^M<=2^L overall=0
+== Part 3a: prime windows below m, m = 2..4000, eta = log2 m + t, t in {0, 0.1, 0.5, 0.9}
+tested=303568 violations=0; max(Delta+M-L) over m>=3 = -0.1697 at m=501 t=0 S={487,491,499} (m=2, S={2}: 0)
+== Part 3b: all subsets of the 11 largest primes in (m(1-eps), m], eps in {0.01, 0.03, 0.08, 0.2}, m = 3..60000 (step 1 below 5000, then 7), eta = log2 m and log2 m + 0.3
+tested=173338414 violations=0; max(Delta+M-L)=-0.1231 at m=503 t=0 S={491,499,503}; rows with L+eta-1-t*^2<0: 3, min of it = -0.0159 at m=504 t=0 n=3
+== Part 3c: exhaustive near m = 2^(n^2): all subsets of the 14 largest primes <= m of sizes n-1..n+2, |m - 2^(n^2)| <= 500, eta = log2 m
+n=3 (eta~9): tested=3363527 violations=0 max(Delta+M-L)=-1.231E-001 at m=2^9-9 c=3
+n=4 (eta~16): tested=6376370 violations=0 max(Delta+M-L)=-5.991E-003 at m=2^16-39 c=4
+n=5 (eta~25): tested=9447438 violations=0 max(Delta+M-L)=-1.397E-005 at m=2^25-39 c=5
+n=6 (eta~36): tested=11451440 violations=0 max(Delta+M-L)=-2.116E-008 at m=2^36-117 c=6
+== Part 3d: real-eta grid: eta = log2 m + t, t in [0,1.5] (300000 points), the c largest primes below m, m = 2^(n^2) + off (off in -40,-32,..,40), c = n-1..n+1, n = 2..6
+n=2: tested=9000030 violations=0 max(Delta+M-L)=-1.84013 at m=2^4+0 c=2 t=0.05740
+n=3: tested=9900033 violations=0 max(Delta+M-L)=-0.12311 at m=2^9-8 c=3 t=0.00000
+n=4: tested=9900033 violations=0 max(Delta+M-L)=-0.99846 at m=2^16+32 c=4 t=0.00000
+n=5: tested=9900033 violations=0 max(Delta+M-L)=-1.00001 at m=2^25+40 c=5 t=0.00000
+n=6: tested=9900033 violations=0 max(Delta+M-L)=-1.00000 at m=2^36+32 c=6 t=0.00000
