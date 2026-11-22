@@ -1,0 +1,36 @@
+# counterexample_eta_log2m: independent check at eta = log2 m (2026-11-22)
+## default
+66919 prime=True
+4864529 prime=True
+52655459 prime=True
+67477043 prime=True
+272962260021097 prime=True
+a_p = 1,0,0,0,0
+eta=log2 m=16.030192941288 g=0.999876789614 g^2=0.999753594409 a_S=1.000000000000 alpha=1 Delta=16.030128266261 ceil(Delta)=17
+a_S(eta^2+eta)=272.997278676 L=273; Q=321.024280673 t*=16.972684158 y=t*^2-eta-Delta=256.011686335 M=257; y - (L - ceil(Delta)) = 0.011686335
+Delta+M-L = 0.030128266  =>  D*2^M/2^L = 1.021102905
+D=66919; D*2^M > 2^L : True
+eta*alpha=16.030192941 < ceil(Delta)=17 : True; m<=2^eta (equality); m*delta=1 with delta=1/m
+## m=1051
+1051 prime=True
+684527 prime=True
+76403 prime=True
+7256497 prime=True
+a_p = 1,0,0,0
+eta=log2 m=10.037546953962 g=1.000520900744 g^2=1.001042072825 a_S=1.001042072825 alpha=1 Delta=10.037546953962 ceil(Delta)=11
+a_S(eta^2+eta)=110.905346947 L=111; Q=141.007527954 t*=10.958717293 y=t*^2-eta-Delta=100.018390805 M=101; y - (L - ceil(Delta)) = 0.018390805
+Delta+M-L = 0.037546954  =>  D*2^M/2^L = 1.026367187
+D=1051; D*2^M > 2^L : True
+eta*alpha=10.037546954 < ceil(Delta)=11 : True; m<=2^eta (equality); m*delta=1 with delta=1/m
+## m=1066422
+1066411 prime=True
+1923521 prime=True
+1978891 prime=True
+694562207 prime=True
+4206448159181 prime=True
+a_p = 1,0,0,0,0
+eta=log2 m=20.024347017583 g=0.999932444709 g^2=0.999864893981 a_S=1.000000000000 alpha=1 Delta=20.024332136300 ceil(Delta)=21
+a_S(eta^2+eta)=420.998820498 L=421; Q=481.017627961 t*=20.977554173 y=t*^2-eta-Delta=400.009099921 M=401; y - (L - ceil(Delta)) = 0.009099921
+Delta+M-L = 0.024332136  =>  D*2^M/2^L = 1.017008781
+D=1066411; D*2^M > 2^L : True
+eta*alpha=20.024347018 < ceil(Delta)=21 : True; m<=2^eta (equality); m*delta=1 with delta=1/m

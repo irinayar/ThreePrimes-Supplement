@@ -1,0 +1,63 @@
+# tg_scan recorded outputs (2026-11-22): scan mode 6 40 1500 400 0 -0.02, then construction mode cx. Column 'max exact excess' of the scan lines is not a margin (see README).
+j=6 shift=0: m-samples=1900 candidates=395 exact=1185 violations=0 (m,B,K) with continuous U>0: 341 | max U (continuous g) = 1.525E-001 at j=6 m=67 c=1 mb=1 K=43 | max exact excess = -1.293E+001 at m=67 c=1 d=1 mb=1 ma=1 K=43 M=24 L=43
+j=7 shift=0: m-samples=1900 candidates=832 exact=2224 violations=0 (m,B,K) with continuous U>0: 711 | max U (continuous g) = 1.218E-001 at j=7 m=131 c=1 mb=1 K=57 | max exact excess = -2.197E+001 at m=134 c=1 d=1 mb=1 ma=1 K=57 M=28 L=57
+j=8 shift=0: m-samples=1900 candidates=1681 exact=4719 violations=0 (m,B,K) with continuous U>0: 1013 | max U (continuous g) = 1.180E-001 at j=8 m=263 c=1 mb=1 K=73 | max exact excess = -3.389E+001 at m=277 c=1 d=1 mb=1 ma=1 K=74 M=32 L=74
+j=9 shift=0: m-samples=1900 candidates=1637 exact=4719 violations=0 (m,B,K) with continuous U>0: 1385 | max U (continuous g) = 1.054E-001 at j=9 m=523 c=1 mb=1 K=91 | max exact excess = -9.442E-001 at m=528 c=2 d=1 mb=3 ma=1 K=91 M=72 L=91
+j=10 shift=0: m-samples=1900 candidates=6041 exact=15603 violations=0 (m,B,K) with continuous U>0: 4469 | max U (continuous g) = 1.051E-001 at j=10 m=1051 c=1 mb=1 K=111 | max exact excess = -6.928E+000 at m=829 c=3 d=0 mb=7 ma=0 K=104 M=68 L=104
+j=11 shift=0: m-samples=1900 candidates=7507 exact=18145 violations=0 (m,B,K) with continuous U>0: 5948 | max U (continuous g) = 9.873E-002 at j=11 m=2099 c=1 mb=1 K=133 | max exact excess = -2.291E+001 at m=2104 c=3 d=0 mb=7 ma=0 K=133 M=77 L=133
+j=12 shift=0: m-samples=1900 candidates=9485 exact=23129 violations=0 (m,B,K) with continuous U>0: 7359 | max U (continuous g) = 9.540E-002 at j=12 m=4201 c=1 mb=1 K=157 | max exact excess = -3.691E+001 at m=4207 c=3 d=0 mb=7 ma=0 K=157 M=84 L=157
+j=13 shift=0: m-samples=1900 candidates=12549 exact=30937 violations=0 (m,B,K) with continuous U>0: 9354 | max U (continuous g) = 8.997E-002 at j=13 m=8389 c=1 mb=1 K=183 | max exact excess = -5.290E+001 at m=8389 c=3 d=0 mb=7 ma=0 K=183 M=91 L=183
+j=14 shift=0: m-samples=1900 candidates=17610 exact=44226 violations=0 (m,B,K) with continuous U>0: 10731 | max U (continuous g) = 8.567E-002 at j=14 m=16764 c=1 mb=1 K=211 | max exact excess = -7.094E+001 at m=16779 c=2 d=1 mb=20 ma=1 K=211 M=112 L=211
+j=15 shift=0: m-samples=1900 candidates=19368 exact=47894 violations=0 (m,B,K) with continuous U>0: 11075 | max U (continuous g) = 8.195E-002 at j=15 m=33504 c=1 mb=1 K=241 | max exact excess = -9.187E+001 at m=34261 c=2 d=1 mb=3 ma=1 K=242 M=120 L=242
+j=16 shift=0: m-samples=1900 candidates=21096 exact=63288 violations=0 (m,B,K) with continuous U>0: 11922 | max U (continuous g) = 7.777E-002 at j=16 m=66922 c=1 mb=1 K=273 | max exact excess = -8.800E-001 at m=68330 c=2 d=2 mb=3 ma=3 K=274 M=241 L=274
+j=17 shift=0: m-samples=1900 candidates=19925 exact=59775 violations=0 (m,B,K) with continuous U>0: 10670 | max U (continuous g) = 7.390E-002 at j=17 m=133679 c=1 mb=1 K=307 | max exact excess = -1.792E+001 at m=133680 c=3 d=1 mb=7 ma=1 K=307 M=238 L=307
+j=18 shift=0: m-samples=1900 candidates=20251 exact=60753 violations=0 (m,B,K) with continuous U>0: 10733 | max U (continuous g) = 7.038E-002 at j=18 m=267052 c=1 mb=1 K=343 | max exact excess = -3.692E+001 at m=267096 c=3 d=1 mb=7 ma=1 K=343 M=252 L=343
+j=19 shift=0: m-samples=1900 candidates=22671 exact=68013 violations=0 (m,B,K) with continuous U>0: 12349 | max U (continuous g) = 6.691E-002 at j=19 m=533454 c=1 mb=1 K=381 | max exact excess = -5.793E+001 at m=533454 c=3 d=1 mb=7 ma=1 K=381 M=266 L=381
+j=20 shift=0: m-samples=1900 candidates=23525 exact=70575 violations=0 (m,B,K) with continuous U>0: 12076 | max U (continuous g) = 6.451E-002 at j=20 m=1066422 c=1 mb=1 K=421 | max exact excess = -8.093E+001 at m=1066422 c=3 d=1 mb=7 ma=1 K=421 M=280 L=421
+j=21 shift=0: m-samples=1900 candidates=23857 exact=71571 violations=0 (m,B,K) with continuous U>0: 12694 | max U (continuous g) = 6.185E-002 at j=21 m=2131186 c=1 mb=1 K=463 | max exact excess = -1.059E+002 at m=2131186 c=3 d=1 mb=7 ma=1 K=463 M=294 L=463
+j=22 shift=0: m-samples=1900 candidates=24020 exact=72060 violations=0 (m,B,K) with continuous U>0: 12081 | max U (continuous g) = 5.925E-002 at j=22 m=4258712 c=1 mb=1 K=507 | max exact excess = -1.329E+002 at m=4258712 c=3 d=1 mb=7 ma=1 K=507 M=308 L=507
+j=23 shift=0: m-samples=1900 candidates=22457 exact=67371 violations=0 (m,B,K) with continuous U>0: 11128 | max U (continuous g) = 5.694E-002 at j=23 m=8511491 c=1 mb=1 K=553 | max exact excess = -1.619E+002 at m=8511491 c=3 d=1 mb=7 ma=1 K=553 M=322 L=553
+j=24 shift=0: m-samples=1900 candidates=22274 exact=66822 violations=0 (m,B,K) with continuous U>0: 10788 | max U (continuous g) = 5.502E-002 at j=24 m=17015191 c=1 mb=1 K=601 | max exact excess = -1.939E+002 at m=17257652 c=2 d=2 mb=3 ma=3 K=602 M=360 L=602
+j=25 shift=0: m-samples=1900 candidates=25245 exact=75735 violations=0 (m,B,K) with continuous U>0: 12513 | max U (continuous g) = 5.314E-002 at j=25 m=34013107 c=1 mb=1 K=651 | max exact excess = -9.217E-001 at m=34477026 c=2 d=3 mb=3 ma=7 K=652 M=601 L=652
+j=26 shift=0: m-samples=1900 candidates=25290 exact=75870 violations=0 (m,B,K) with continuous U>0: 12511 | max U (continuous g) = 5.122E-002 at j=26 m=67986160 c=1 mb=1 K=703 | max exact excess = -2.694E+001 at m=67986160 c=3 d=2 mb=7 ma=3 K=703 M=598 L=703
+j=27 shift=0: m-samples=1900 candidates=26649 exact=79947 violations=0 (m,B,K) with continuous U>0: 12978 | max U (continuous g) = 4.960E-002 at j=27 m=135915050 c=1 mb=1 K=757 | max exact excess = -5.495E+001 at m=135915050 c=3 d=2 mb=7 ma=3 K=757 M=621 L=757
+j=28 shift=0: m-samples=1900 candidates=23963 exact=71889 violations=0 (m,B,K) with continuous U>0: 11313 | max U (continuous g) = 4.796E-002 at j=28 m=271699848 c=1 mb=1 K=813 | max exact excess = -8.495E+001 at m=271699848 c=3 d=2 mb=7 ma=3 K=813 M=644 L=813
+j=29 shift=0: m-samples=1900 candidates=24394 exact=73182 violations=0 (m,B,K) with continuous U>0: 11593 | max U (continuous g) = 4.656E-002 at j=29 m=543211186 c=1 mb=1 K=871 | max exact excess = -1.169E+002 at m=543211186 c=3 d=2 mb=7 ma=3 K=871 M=667 L=871
+j=30 shift=0: m-samples=1900 candidates=24414 exact=73242 violations=0 (m,B,K) with continuous U>0: 11573 | max U (continuous g) = 4.507E-002 at j=30 m=1085936136 c=1 mb=1 K=931 | max exact excess = -1.510E+002 at m=1085936136 c=3 d=2 mb=7 ma=3 K=931 M=690 L=931
+j=31 shift=0: m-samples=1900 candidates=24780 exact=74340 violations=0 (m,B,K) with continuous U>0: 11296 | max U (continuous g) = 4.380E-002 at j=31 m=2171162507 c=1 mb=1 K=993 | max exact excess = -1.870E+002 at m=2171162507 c=3 d=2 mb=7 ma=3 K=993 M=713 L=993
+j=32 shift=0: m-samples=1900 candidates=25984 exact=77952 violations=0 (m,B,K) with continuous U>0: 11736 | max U (continuous g) = 4.259E-002 at j=32 m=4340951716 c=1 mb=1 K=1057 | max exact excess = -2.250E+002 at m=4340951716 c=3 d=2 mb=7 ma=3 K=1057 M=736 L=1057
+j=33 shift=0: m-samples=1900 candidates=26402 exact=79206 violations=0 (m,B,K) with continuous U>0: 11800 | max U (continuous g) = 4.138E-002 at j=33 m=8678910122 c=1 mb=1 K=1123 | max exact excess = -2.650E+002 at m=8678910122 c=3 d=2 mb=7 ma=3 K=1123 M=759 L=1123
+j=34 shift=0: m-samples=1900 candidates=26377 exact=79131 violations=0 (m,B,K) with continuous U>0: 11710 | max U (continuous g) = 4.027E-002 at j=34 m=17352738502 c=1 mb=1 K=1191 | max exact excess = -3.070E+002 at m=17352738502 c=3 d=2 mb=7 ma=3 K=1191 M=782 L=1191
+j=35 shift=0: m-samples=1900 candidates=29155 exact=87465 violations=0 (m,B,K) with continuous U>0: 13013 | max U (continuous g) = 3.924E-002 at j=35 m=34696307349 c=1 mb=1 K=1261 | max exact excess = -3.510E+002 at m=34696307349 c=3 d=2 mb=7 ma=3 K=1261 M=805 L=1261
+j=36 shift=0: m-samples=1900 candidates=28429 exact=85287 violations=0 (m,B,K) with continuous U>0: 12339 | max U (continuous g) = 3.815E-002 at j=36 m=69369186609 c=1 mb=1 K=1333 | max exact excess = -9.453E-001 at m=70035033596 c=2 d=4 mb=3 ma=15 K=1334 M=1261 L=1334
+j=37 shift=0: m-samples=1900 candidates=29697 exact=89091 violations=0 (m,B,K) with continuous U>0: 12639 | max U (continuous g) = 3.729E-002 at j=37 m=138712957883 c=1 mb=1 K=1407 | max exact excess = -3.796E+001 at m=138712957883 c=3 d=3 mb=7 ma=7 K=1407 M=1258 L=1407
+j=38 shift=0: m-samples=1900 candidates=29455 exact=88365 violations=0 (m,B,K) with continuous U>0: 12510 | max U (continuous g) = 3.637E-002 at j=38 m=277356811694 c=1 mb=1 K=1483 | max exact excess = -7.696E+001 at m=277356811694 c=3 d=3 mb=7 ma=7 K=1483 M=1292 L=1483
+j=39 shift=0: m-samples=1900 candidates=28237 exact=84711 violations=0 (m,B,K) with continuous U>0: 11645 | max U (continuous g) = 3.553E-002 at j=39 m=554594312499 c=1 mb=1 K=1561 | max exact excess = -1.180E+002 at m=554594312499 c=3 d=3 mb=7 ma=7 K=1561 M=1326 L=1561
+j=40 shift=0: m-samples=1900 candidates=28134 exact=84402 violations=0 (m,B,K) with continuous U>0: 11481 | max U (continuous g) = 3.469E-002 at j=40 m=1108932736100 c=1 mb=1 K=1641 | max exact excess = -1.610E+002 at m=1108932736100 c=3 d=3 mb=7 ma=7 K=1641 M=1360 L=1641
+
+# tg construction mode (cx) at eta = log2 m, 256-bit exact check (2026-11-22); command: dotnet run -c Release -- cx <m> <number of primes above m> <tries>
+## cx 66922 4
+m=66922 B=66919 eta=16.030192941 w=272.997279 Delta=16.030128266 ceil=17
+K=273 target sum of above-primes = 0.750240029, window eps=2.564E-004
+  set above=4864529,52655459,67477043,272962260021097 g=0.999876790 (g_K=1.000004984) M=257 L=273 exact excess Delta+M-L = 3.0128E-002
+  set above=8659741,12085517,30666367,30821551433444549 g=0.999876790 (g_K=1.000004984) M=257 L=273 exact excess Delta+M-L = 3.0128E-002
+## cx 1051 3
+m=1051 B=1051 eta=10.037546954 w=110.789896 Delta=10.037546954 ceil=11
+K=111 target sum of above-primes = 0.685311998, window eps=8.536E-004
+  set above=684527,76403,7256497 g=1.000520901 (g_K=1.000947761) M=101 L=111 exact excess Delta+M-L = 3.7547E-002
+  set above=826957,1059733,258983 g=1.000520836 (g_K=1.000947761) M=101 L=111 exact excess Delta+M-L = 3.7547E-002
+## cx 1066422 4
+m=1066422 B=1066411 eta=20.024347018 w=420.998820 Delta=20.024332136 ceil=21
+K=421 target sum of above-primes = 0.776530500, window eps=1.379E-004
+  set above=1923521,1978891,694562207,4206448159181 g=0.999932445 (g_K=1.000001401) M=401 L=421 exact excess Delta+M-L = 2.4332E-002
+  set above=77517481,839080349,1075266113,3302917 g=0.999932401 (g_K=1.000001401) M=401 L=421 exact excess Delta+M-L = 2.4332E-002
+## cx 1085936136 5
+m=1085936136 B=1085936129 eta=30.016292115 w=930.994084 Delta=30.016292105 ceil=31
+K=931 target sum of above-primes = 0.817478546, window eps=4.357E-005
+  set above=1958708189,2015102699,707271776789,78935944027,189007447834226311 g=0.999981390 (g_K=1.000003177) M=901 L=931 exact excess Delta+M-L = 1.6292E-002
+  set above=854434424201,1094942013083,4470526673,512890394591,179964334217 g=0.999981390 (g_K=1.000003177) M=901 L=931 exact excess Delta+M-L = 1.6292E-002
+## cx 1108932736100 6
+m=1108932736100 B=1108932736097 eta=40.012308998 w=1640.997180 Delta=40.012308998 ceil=41
+K=1641 target sum of above-primes = 0.841911298, window eps=1.902E-005
+  set above=4060956477526511,1774898257013489,138239518212007,2847010924494839,63846330174371,958361671085298581 g=0.999991347 (g_K=1.000000859) M=1601 L=1641 exact excess Delta+M-L = 1.2309E-002
+  set above=2772697452060461,463199913710921,1933349342416837,86656395210923,3530579519359163,133996232807882449 g=0.999991347 (g_K=1.000000859) M=1601 L=1641 exact excess Delta+M-L = 1.2309E-002
