@@ -75,7 +75,7 @@ class P {
   static BigInteger[][] InitOrig(BigInteger D, List<BigInteger> qs) { int c = qs.Count; var o = new BigInteger[c + 1][]; o[0] = new BigInteger[c + 1]; o[0][0] = 1; for (int i = 0; i < c; i++) o[0][i + 1] = D; for (int i = 0; i < c; i++) { o[i + 1] = new BigInteger[c + 1]; o[i + 1][i + 1] = qs[i]; } return o; }
   static BigInteger[][] ScaledBasis(BigInteger[][] o, List<BigInteger> qs, BigInteger Bc, BigInteger Lq) { int c = qs.Count; var b = new BigInteger[c + 1][]; for (int r = 0; r <= c; r++) { b[r] = new BigInteger[c + 1]; b[r][0] = o[r][0] * Lq * A; for (int i = 0; i < c; i++) b[r][i + 1] = o[r][i + 1] * Bd * Bc * (Lq / qs[i]); } return b; }
   static BigInteger[][] Unscale(BigInteger[][] b, List<BigInteger> qs, BigInteger Bc, BigInteger Lq) { int c = qs.Count; var o = new BigInteger[c + 1][]; for (int r = 0; r <= c; r++) { o[r] = new BigInteger[c + 1]; o[r][0] = b[r][0] / (Lq * A); for (int i = 0; i < c; i++) o[r][i + 1] = b[r][i + 1] / (Bd * Bc * (Lq / qs[i])); } return o; }
-  // least s >= 1 (s >= lbS) with all Bd |D s - j q| < A q (q in qs), s <= Smax; returns 0 if none or capped before a solution
+  // least s >= 1 (s >= lbS) with all Bd |D s - j q| < A q (q in qs), s <= Smax; returns 0 if none, or if any doubling step reached the node cap (capped=true; then nothing is returned)
   static BigInteger LeastS(BigInteger D, List<BigInteger> qs, BigInteger Smax, BigInteger lbS, out long totalNodes, out bool capped) {
     totalNodes = 0; capped = false; int c = qs.Count; if (c == 0) return BigInteger.Max(1, lbS);
     BigInteger Lq = 1; foreach (var q in qs) Lq = Lq / BigInteger.GreatestCommonDivisor(Lq, q) * q; var cur = InitOrig(D, qs); BigInteger ALq = A * Lq;
@@ -91,7 +91,8 @@ class P {
         bool ok2 = true; BigInteger x = D * s0; foreach (var q in qs) { BigInteger rm = x % q; BigInteger dist = BigInteger.Min(rm, q - rm); if (dist * Bd >= A * q) { ok2 = false; break; } }
         if (!ok2) continue; if (best.IsZero || s0 < best) best = s0;
       }
-      if (!best.IsZero) return best; if (capped) return 0; if (Bc == Smax) return 0;
+      if (capped) return 0;   // a step that reached the node cap is incomplete: no witness from it is accepted as the next record
+      if (!best.IsZero) return best; if (Bc == Smax) return 0;
     }
   }
   // exact P_S(k) = max over q = p^(n^2) of min(k mod q, q - k mod q)/q, as a reduced fraction
@@ -115,8 +116,10 @@ class P {
     var (num, den) = PS(S, k);
     Console.WriteLine($"S={Sname} j={j} u={k} bits={Log2B(k):F2} delta_j={num}/{den} ell_j={Log2B(den) - Log2B(num):F4} (start)");
     double[] lg = S.Select(p => Math.Log2(p)).ToArray(); double gA = lg.Sum(l => Math.Sqrt(1.0 / l)); double aS = Math.Max(1.0, gA * gA);
+    int maxRec = int.MaxValue; foreach (var ar in args.Skip(4)) if (ar.StartsWith("n=")) maxRec = int.Parse(ar.Substring(2));   // optional: stop after n new records
+    int jStart = j;
     int exitCode = 0;
-    while (k.GetBitLength() < maxBits) {
+    while (k.GetBitLength() < maxBits && j - jStart < maxRec) {
       var sw = Stopwatch.StartNew(); A = num; Bd = den;                              // radius delta_j = P_S(k_j)
       int[] a = S.Select(p => Forced(p)).ToArray(); BigInteger D = DOf(S, a); BigInteger m = CeilDiv(Bd, A);
       BigInteger N0 = CountBound(S, a, D, m, out int cstar); var qs = Coords(S, a, D * N0, m);
