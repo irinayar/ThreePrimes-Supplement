@@ -107,22 +107,26 @@ class P {
     foreach (int R in Enumerable.Range(k0, k1 - k0 + 1)) {
       var sw = Stopwatch.StartNew(); var a = S.Select(p => Forced(p, R)).ToArray(); BigInteger D = DOf(S, a); BigInteger N0 = CountBound(S, a, D, R);
       var qs = Coords(S, a, D * N0, R); BigInteger s1 = LeastS(D, qs, R, N0, out long nd, out bool capped); if (s1.IsZero) { Console.WriteLine($"S={{{string.Join(",", S)}}} delta=1/{R}: not found"); continue; }
-      var w1 = qs.Select(q => Cen(D * s1, q)).ToArray();
+      // version 13: the coordinate list is rebuilt for every search bound Bn (all moduli q <= m D Bn), since a bound N0 for the FIRST element is not a bound for the second vector;
+      // w1 are the centred residues of D s1 modulo the current list. Capped steps are reported (cap1 for u, cap2 for the list that gave T2).
       // list ball elements with s <= B, doubling B until an independent vector and an element prime to every r exist
-      BigInteger Bn = s1 * 2; List<BigInteger> lst = null; BigInteger T2 = 0; int rank2 = 0; var Nr = new BigInteger[rs.Length]; var rankR = new int[rs.Length]; long ndl = 0;
+      BigInteger Bn = s1 * 2; List<BigInteger> lst = null; BigInteger T2 = 0; int rank2 = 0; var Nr = new BigInteger[rs.Length]; var rankR = new int[rs.Length]; long ndl = 0; bool cap2 = false;
+      var qB = qs; BigInteger[] w1 = null;
       for (int tries = 0; tries < 300; tries++) {
-        lst = Solutions(D, qs, R, Bn, out bool cp, ref ndl); T2 = 0;
-        for (int i = 0; i < lst.Count; i++) { var s = lst[i]; bool prop = false; if (s % s1 == 0) { var aa = s / s1; prop = true; for (int t = 0; t < qs.Count && prop; t++) if (Cen(D * s, qs[t]) != aa * w1[t]) prop = false; } if (!prop) { T2 = s; rank2 = i + 1; break; } }
+        qB = Coords(S, a, D * Bn, R); w1 = qB.Select(q => Cen(D * s1, q)).ToArray();
+        lst = Solutions(D, qB, R, Bn, out bool cp, ref ndl); T2 = 0; cap2 = cp;
+        for (int i = 0; i < lst.Count; i++) { var s = lst[i]; bool prop = false; if (s % s1 == 0) { var aa = s / s1; prop = true; for (int t = 0; t < qB.Count && prop; t++) if (Cen(D * s, qB[t]) != aa * w1[t]) prop = false; } if (!prop) { T2 = s; rank2 = i + 1; break; } }
         for (int j = 0; j < rs.Length; j++) { int idx = lst.FindIndex(z => z % rs[j] != 0); if (idx >= 0) { Nr[j] = lst[idx]; rankR[j] = idx + 1; } }
         if (!T2.IsZero && Nr.All(x => !x.IsZero)) break; if (cp || lst.Count > 2000000 || Bn.GetBitLength() > s1.GetBitLength() + 300) break; Bn *= 2;
       }
-      if (T2.IsZero) { Console.WriteLine($"S={{{string.Join(",", S)}}} delta=1/{R}: u={D * s1} T2 not found within the bound"); continue; }
+      qs = qB;
+      if (T2.IsZero) { Console.WriteLine($"S={{{string.Join(",", S)}}} delta=1/{R}: u={D * s1} cap1={(capped ? 1 : 0)} T2 not found within the bound (cap2={(cap2 ? 1 : 0)})"); continue; }
       // quantities of the argument at scale T = T2: retained coordinates q <= m D T, mu = max(s1/T, max m|w_i|/q_i)
       int c2 = qs.Count(q => q < R * D * T2); double nu = 0; for (int t = 0; t < qs.Count; t++) if (qs[t] < R * D * T2) nu = Math.Max(nu, (double)R * Math.Abs((double)w1[t]) / (double)qs[t]); double mu = Math.Max(Math.Exp(LogB(s1) * Math.Log(2) - LogB(T2) * Math.Log(2)), nu);
       var w2 = qs.Select(q => Cen(D * T2, q)).ToArray(); double nu2 = 0; for (int t = 0; t < qs.Count; t++) if (qs[t] < R * D * T2) nu2 = Math.Max(nu2, (double)R * Math.Abs((double)w2[t]) / (double)qs[t]);
       double lB2 = c2 * Math.Log2(R) - Math.Log2(mu) - c2 * Math.Log2(1 - mu / 2); double lT2 = LogB(T2);
       string extra = ""; for (int j = 0; j < rs.Length; j++) extra += $" | r={rs[j]}: N/D={Nr[j]} rank={rankR[j]} N==T2:{(Nr[j] == T2 ? 1 : 0)} r|s1:{(s1 % rs[j] == 0 ? 1 : 0)} r|T2:{(T2 % rs[j] == 0 ? 1 : 0)}";
-      Console.WriteLine($"S={{{string.Join(",", S)}}} delta=1/{R}: u={D * s1}  s1={s1} log2s1={LogB(s1):F2} nu1={nu:F4} mu={mu:F4} c2={c2} T2={T2} log2T2={lT2:F2} rank2={rank2} nu2={nu2:F4} log2B2={lB2:F2} T2<=B2:{(lT2 <= lB2 + 1e-9 ? 1 : 0)} log2(B2/T2)={lB2 - lT2:F2}{extra} [{sw.Elapsed.TotalSeconds:F1}s]");
+      Console.WriteLine($"S={{{string.Join(",", S)}}} delta=1/{R}: u={D * s1}  s1={s1} log2s1={LogB(s1):F2} nu1={nu:F4} mu={mu:F4} c2={c2} T2={T2} log2T2={lT2:F2} rank2={rank2} nu2={nu2:F4} log2B2={lB2:F2} T2<=B2:{(lT2 <= lB2 + 1e-9 ? 1 : 0)} log2(B2/T2)={lB2 - lT2:F2} cap1={(capped ? 1 : 0)} cap2={(cap2 ? 1 : 0)}{extra} [{sw.Elapsed.TotalSeconds:F1}s]");
     }
   }
 }

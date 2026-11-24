@@ -72,8 +72,11 @@ class P {
   static BigInteger[][] InitOrig(BigInteger D, List<BigInteger> qs) { int c = qs.Count; var o = new BigInteger[c + 1][]; o[0] = new BigInteger[c + 1]; o[0][0] = 1; for (int i = 0; i < c; i++) o[0][i + 1] = D; for (int i = 0; i < c; i++) { o[i + 1] = new BigInteger[c + 1]; o[i + 1][i + 1] = qs[i]; } return o; }
   static BigInteger[][] ScaledBasis(BigInteger[][] o, List<BigInteger> qs, int R, BigInteger Bc, BigInteger Lq) { int c = qs.Count; var b = new BigInteger[c + 1][]; for (int r = 0; r <= c; r++) { b[r] = new BigInteger[c + 1]; b[r][0] = o[r][0] * Lq; for (int i = 0; i < c; i++) b[r][i + 1] = o[r][i + 1] * R * Bc * (Lq / qs[i]); } return b; }
   static BigInteger[][] Unscale(BigInteger[][] b, List<BigInteger> qs, int R, BigInteger Bc, BigInteger Lq) { int c = qs.Count; var o = new BigInteger[c + 1][]; for (int r = 0; r <= c; r++) { o[r] = new BigInteger[c + 1]; o[r][0] = b[r][0] / Lq; for (int i = 0; i < c; i++) o[r][i + 1] = b[r][i + 1] / (R * Bc * (Lq / qs[i])); } return o; }
-  static BigInteger LeastS(BigInteger D, List<BigInteger> qs, int R, BigInteger Smax, BigInteger lbS, out long totalNodes, out bool capped) {
-    totalNodes = 0; capped = false; int c = qs.Count; if (c == 0) return 1;
+  // version 13: capped = some doubling step reached the node cap (the enumeration of that step is incomplete);
+  // byMono = the value found equals the starting bound lbS, which is a proved lower bound when lbCertified (monotonicity of u_S(1/k) in k), so it is the least element even if capped.
+  static BigInteger LeastS(BigInteger D, List<BigInteger> qs, int R, BigInteger Smax, BigInteger lbS, bool lbCertified, out long totalNodes, out bool capped, out bool byMono) {
+    totalNodes = 0; capped = false; byMono = false; int c = qs.Count; if (c == 0) return 1;
+    BigInteger lbStart = BigInteger.Max(1, lbS);
     BigInteger Lq = 1; foreach (var q in qs) Lq = Lq / BigInteger.GreatestCommonDivisor(Lq, q) * q; var cur = InitOrig(D, qs);
     for (BigInteger B = BigInteger.Max(1, lbS); ; B = B * 2) {
       if (B > Smax * 2) return 0; BigInteger Bc = BigInteger.Min(B, Smax); BigInteger Z = Bc * Lq;
@@ -89,7 +92,7 @@ class P {
         bool ok2 = true; BigInteger x = D * s0; foreach (var q in qs) { BigInteger rm = x % q; BigInteger dist = BigInteger.Min(rm, q - rm); if (dist * R >= q) { ok2 = false; break; } }
         if (!ok2) continue; if (best.IsZero || s0 < best) best = s0;
       }
-      if (!best.IsZero) return best; if (capped) return 0; if (Bc == Smax) return 0;
+      if (!best.IsZero) { byMono = lbCertified && best == lbStart; return best; } if (capped) return 0; if (Bc == Smax) return 0;
     }
   }
   // all valid s <= Bc (sorted), exact
@@ -104,13 +107,14 @@ class P {
   }
   static void Main(string[] args) {
     int[] S = args[0].Split(',').Select(int.Parse).ToArray(); int k0 = int.Parse(args[1]), k1 = int.Parse(args[2]); nodeCap = args.Length > 3 ? long.Parse(args[3]) : 200000000L; int[] rs = args.Length > 4 && args[4].Length > 0 ? args[4].Split(',').Select(int.Parse).ToArray() : new int[0];
-    BigInteger prevU = 0;
+    BigInteger prevU = 0; // u_S(1/k) of the last CERTIFIED row (version 13: a capped row that is not certified by monotonicity does not update it)
     foreach (int R in Enumerable.Range(k0, k1 - k0 + 1)) {
       var sw = Stopwatch.StartNew(); var a = S.Select(p => Forced(p, R)).ToArray(); BigInteger D = DOf(S, a); BigInteger N0 = CountBound(S, a, D, R);
-      var qs = Coords(S, a, D * N0, R); BigInteger lb = prevU.IsZero ? 1 : (prevU + D - 1) / D; BigInteger s = LeastS(D, qs, R, N0, lb, out long nd, out bool capped); if (!s.IsZero) prevU = D * s;
+      var qs = Coords(S, a, D * N0, R); BigInteger lb = prevU.IsZero ? 1 : (prevU + D - 1) / D; BigInteger s = LeastS(D, qs, R, N0, lb, !prevU.IsZero, out long nd, out bool capped, out bool byMono);
       if (s.IsZero) { Console.WriteLine($"S={{{string.Join(",", S)}}} delta=1/{R}: not found (capped={capped}, coordinates={qs.Count}) [{sw.Elapsed.TotalSeconds:F1}s]"); continue; }
+      bool certified = !capped || byMono; string status = !capped ? "complete" : byMono ? "monotone" : "witness-only"; if (certified) prevU = D * s;
       BigInteger u = D * s; string extra = ""; if (rs.Length > 0) { foreach (int r in rs) { BigInteger Bn = s * 2; BigInteger Nr = 0; int rank = 0; long nd2 = 0; BigInteger lastB = Bn; for (int tries = 0; tries < 400 && Nr.IsZero; tries++) { lastB = Bn; var lst = Solutions(D, qs, R, Bn, out bool cp2, ref nd2); int idx = lst.FindIndex(z => z % r != 0); if (idx >= 0) { Nr = lst[idx]; rank = idx + 1; } else { if (cp2 || lst.Count > 2000000 || Bn.GetBitLength() > s.GetBitLength() + 300) break; Bn *= 2; } } if (Nr.IsZero) { extra += $" | r={r}: N>{D * lastB} (none among the {0} ball elements up to that bound)"; continue; } extra += $" | r={r}: N={D * Nr} rank={rank} N/u={(double)Nr / (double)s:F3} r|u={(s % r == 0 ? 1 : 0)}"; } }
-      Console.WriteLine($"S={{{string.Join(",", S)}}} delta=1/{R}: u={u}  D_S={D}  u/D={(double)(u / D):G6}  coordinates={qs.Count} nodes={nd}{extra} [{sw.Elapsed.TotalSeconds:F1}s]");
+      Console.WriteLine($"S={{{string.Join(",", S)}}} delta=1/{R}: u={u}  D_S={D}  u/D={(double)(u / D):G6}  coordinates={qs.Count} nodes={nd} status={status}{extra} [{sw.Elapsed.TotalSeconds:F1}s]");
     }
   }
 }
