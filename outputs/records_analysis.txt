@@ -1,0 +1,39 @@
+records_analysis.txt - analysis of records_S*.txt (record_minima, 2026-11-24)
+Computed by scratchpad scripts (validate.pl, summ.awk, fit2.pl) that are not part of the supplement; every record was verified in exact integers by the program (strict=1).
+
+== Validation against the existing outputs least_elements_lattice2_S*.txt (u_S(1/k) = record u_j with delta_j < 1/k <= delta_{j-1})
+-- S2-3
+records read: 60
+existing rows: 1293, matched: 1293, mismatched: 0, beyond the record list: 0
+-- S2-5
+records read: 42
+existing rows: 1979, matched: 1979, mismatched: 0, beyond the record list: 0
+-- S3-5
+records read: 44
+existing rows: 1999, matched: 1999, mismatched: 0, beyond the record list: 0
+
+== Gaps at the right end of each plateau (delta = delta_{j-1}; u_S(delta_{j-1}) = u_j), bits
+-- S2-3
+records with bounds: 59; negative gap_cnt: 0; gap_cnt min 0.59 max 59.89 mean 27.51; mean over j>=20 30.38; mean gap_D2M 51.74; mean gap_L 120.86; mean u/ell^2 (j>=10) 1.554
+last: j=60 bits=236.31 ell_R=11.300 gap_cnt=39.75 gap_D2M=78.05 gap_L=211.69 ratio u/bound_cnt=0.856
+-- S2-5
+records with bounds: 41; negative gap_cnt: 0; gap_cnt min 0.00 max 44.56 mean 20.63; mean over j>=20 23.74; mean gap_D2M 44.61; mean gap_L 101.99; mean u/ell^2 (j>=10) 1.299
+last: j=42 bits=199.58 ell_R=11.179 gap_cnt=13.40 gap_D2M=62.71 gap_L=174.42 ratio u/bound_cnt=0.937
+-- S3-5
+records with bounds: 43; negative gap_cnt: 0; gap_cnt min 0.00 max 34.29 mean 20.28; mean over j>=20 21.92; mean gap_D2M 47.39; mean gap_L 102.41; mean u/ell^2 (j>=10) 1.081
+last: j=44 bits=162.82 ell_R=11.647 gap_cnt=11.55 gap_D2M=61.44 gap_L=147.18 ratio u/bound_cnt=0.934
+-- S2-3-5
+records with bounds: 35; negative gap_cnt: 0; gap_cnt min 1.43 max 54.73 mean 27.76; mean over j>=20 31.66; mean gap_D2M 45.67; mean gap_L 83.04; mean u/ell^2 (j>=10) 2.451
+last: j=36 bits=106.39 ell_R=5.966 gap_cnt=54.73 gap_D2M=77.27 gap_L=144.61 ratio u/bound_cnt=0.660
+
+== Normalised ratio r = log2(u)/(x_S ln2 ell^2) at the points (ell_{j-1}, u_j), fits r = 1 - kappa/ell and r = a - kappa/ell
+x_S: {2,3} 3.364, {2,5} 2.830, {3,5} 2.2025 (Corollary 3.3 of the article)
+S2-3: n=52 ell>=4.0: ratio from 0.498 (ell=4.00) to 0.794 (ell=11.30);  fit 1-kappa/l: kappa=2.26 rms 0.050;  free fit a - k/l: a=0.942 k=1.86 rms 0.046
+S2-3: n=40 ell>=6.0: ratio from 0.619 (ell=6.29) to 0.794 (ell=11.30);  fit 1-kappa/l: kappa=2.39 rms 0.026;  free fit a - k/l: a=0.956 k=2.01 rms 0.025
+S2-3: n=31 ell>=8.0: ratio from 0.725 (ell=8.00) to 0.794 (ell=11.30);  fit 1-kappa/l: kappa=2.38 rms 0.025;  free fit a - k/l: a=0.860 k=1.07 rms 0.020
+S2-5: n=31 ell>=4.0: ratio from 0.651 (ell=4.42) to 0.814 (ell=11.18);  fit 1-kappa/l: kappa=2.34 rms 0.064;  free fit a - k/l: a=0.878 k=1.42 rms 0.055
+S2-5: n=28 ell>=6.0: ratio from 0.694 (ell=6.00) to 0.814 (ell=11.18);  fit 1-kappa/l: kappa=2.41 rms 0.043;  free fit a - k/l: a=0.877 k=1.37 rms 0.036
+S2-5: n=21 ell>=8.0: ratio from 0.711 (ell=8.00) to 0.814 (ell=11.18);  fit 1-kappa/l: kappa=2.55 rms 0.032;  free fit a - k/l: a=0.959 k=2.16 rms 0.032
+S3-5: n=38 ell>=4.0: ratio from 0.735 (ell=4.75) to 0.786 (ell=11.65);  fit 1-kappa/l: kappa=2.52 rms 0.055;  free fit a - k/l: a=0.859 k=1.26 rms 0.046
+S3-5: n=36 ell>=6.0: ratio from 0.599 (ell=7.09) to 0.786 (ell=11.65);  fit 1-kappa/l: kappa=2.63 rms 0.031;  free fit a - k/l: a=0.962 k=2.26 rms 0.031
+S3-5: n=34 ell>=8.0: ratio from 0.678 (ell=8.05) to 0.786 (ell=11.65);  fit 1-kappa/l: kappa=2.62 rms 0.031;  free fit a - k/l: a=0.923 k=1.87 rms 0.030
