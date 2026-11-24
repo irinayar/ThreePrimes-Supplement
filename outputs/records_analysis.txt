@@ -1,39 +1,69 @@
-records_analysis.txt - analysis of records_S*.txt (record_minima, 2026-11-24)
-Computed by scratchpad scripts (validate.pl, summ.awk, fit2.pl) that are not part of the supplement; every record was verified in exact integers by the program (strict=1).
+records_analysis.txt - analysis of records_S*.txt (record_minima, stages of 2026-11-24; pairs to ell = 13.0, 15.5, 18.3)
+Scripts (scratchpad v19/v20): validate.pl, summ.awk, fit2.pl, struct.pl, clean.pl, modelh (C#); not part of the supplement.
 
-== Validation against the existing outputs least_elements_lattice2_S*.txt (u_S(1/k) = record u_j with delta_j < 1/k <= delta_{j-1})
--- S2-3
-records read: 60
+== Validation against the existing outputs least_elements_lattice2_S*.txt
+-- S2-3: 81 records
 existing rows: 1293, matched: 1293, mismatched: 0, beyond the record list: 0
--- S2-5
-records read: 42
+-- S2-5: 85 records
 existing rows: 1979, matched: 1979, mismatched: 0, beyond the record list: 0
--- S3-5
-records read: 44
+-- S3-5: 107 records
 existing rows: 1999, matched: 1999, mismatched: 0, beyond the record list: 0
 
-== Gaps at the right end of each plateau (delta = delta_{j-1}; u_S(delta_{j-1}) = u_j), bits
+== Gaps at the right ends of the plateaus (bits) and last record
 -- S2-3
-records with bounds: 59; negative gap_cnt: 0; gap_cnt min 0.59 max 59.89 mean 27.51; mean over j>=20 30.38; mean gap_D2M 51.74; mean gap_L 120.86; mean u/ell^2 (j>=10) 1.554
-last: j=60 bits=236.31 ell_R=11.300 gap_cnt=39.75 gap_D2M=78.05 gap_L=211.69 ratio u/bound_cnt=0.856
+records with bounds: 80; negative gap_cnt: 0; gap_cnt min 0.59 max 59.89 mean 32.41; mean over j>=20 35.19; mean gap_D2M 61.08; mean gap_L 152.62; mean u/ell^2 (j>=10) 1.635
+last: j=81 bits=324.00 ell_R=12.961 gap_cnt=48.42 gap_D2M=86.36 gap_L=259.00 ratio u/bound_cnt=0.870
 -- S2-5
-records with bounds: 41; negative gap_cnt: 0; gap_cnt min 0.00 max 44.56 mean 20.63; mean over j>=20 23.74; mean gap_D2M 44.61; mean gap_L 101.99; mean u/ell^2 (j>=10) 1.299
-last: j=42 bits=199.58 ell_R=11.179 gap_cnt=13.40 gap_D2M=62.71 gap_L=174.42 ratio u/bound_cnt=0.937
+records with bounds: 84; negative gap_cnt: 0; gap_cnt min 0.00 max 63.53 mean 33.21; mean over j>=20 36.38; mean gap_D2M 67.67; mean gap_L 178.03; mean u/ell^2 (j>=10) 1.442
+last: j=85 bits=374.62 ell_R=15.415 gap_cnt=49.41 gap_D2M=114.28 gap_L=320.38 ratio u/bound_cnt=0.883
 -- S3-5
-records with bounds: 43; negative gap_cnt: 0; gap_cnt min 0.00 max 34.29 mean 20.28; mean over j>=20 21.92; mean gap_D2M 47.39; mean gap_L 102.41; mean u/ell^2 (j>=10) 1.081
-last: j=44 bits=162.82 ell_R=11.647 gap_cnt=11.55 gap_D2M=61.44 gap_L=147.18 ratio u/bound_cnt=0.934
--- S2-3-5
-records with bounds: 35; negative gap_cnt: 0; gap_cnt min 1.43 max 54.73 mean 27.76; mean over j>=20 31.66; mean gap_D2M 45.67; mean gap_L 83.04; mean u/ell^2 (j>=10) 2.451
-last: j=36 bits=106.39 ell_R=5.966 gap_cnt=54.73 gap_D2M=77.27 gap_L=144.61 ratio u/bound_cnt=0.660
+records with bounds: 106; negative gap_cnt: 0; gap_cnt min 0.00 max 55.94 mean 29.54; mean over j>=20 31.94; mean gap_D2M 72.47; mean gap_L 183.38; mean u/ell^2 (j>=10) 1.173
+last: j=107 bits=416.44 ell_R=17.981 gap_cnt=19.42 gap_D2M=102.77 gap_L=302.56 ratio u/bound_cnt=0.955
 
-== Normalised ratio r = log2(u)/(x_S ln2 ell^2) at the points (ell_{j-1}, u_j), fits r = 1 - kappa/ell and r = a - kappa/ell
-x_S: {2,3} 3.364, {2,5} 2.830, {3,5} 2.2025 (Corollary 3.3 of the article)
-S2-3: n=52 ell>=4.0: ratio from 0.498 (ell=4.00) to 0.794 (ell=11.30);  fit 1-kappa/l: kappa=2.26 rms 0.050;  free fit a - k/l: a=0.942 k=1.86 rms 0.046
-S2-3: n=40 ell>=6.0: ratio from 0.619 (ell=6.29) to 0.794 (ell=11.30);  fit 1-kappa/l: kappa=2.39 rms 0.026;  free fit a - k/l: a=0.956 k=2.01 rms 0.025
-S2-3: n=31 ell>=8.0: ratio from 0.725 (ell=8.00) to 0.794 (ell=11.30);  fit 1-kappa/l: kappa=2.38 rms 0.025;  free fit a - k/l: a=0.860 k=1.07 rms 0.020
-S2-5: n=31 ell>=4.0: ratio from 0.651 (ell=4.42) to 0.814 (ell=11.18);  fit 1-kappa/l: kappa=2.34 rms 0.064;  free fit a - k/l: a=0.878 k=1.42 rms 0.055
-S2-5: n=28 ell>=6.0: ratio from 0.694 (ell=6.00) to 0.814 (ell=11.18);  fit 1-kappa/l: kappa=2.41 rms 0.043;  free fit a - k/l: a=0.877 k=1.37 rms 0.036
-S2-5: n=21 ell>=8.0: ratio from 0.711 (ell=8.00) to 0.814 (ell=11.18);  fit 1-kappa/l: kappa=2.55 rms 0.032;  free fit a - k/l: a=0.959 k=2.16 rms 0.032
-S3-5: n=38 ell>=4.0: ratio from 0.735 (ell=4.75) to 0.786 (ell=11.65);  fit 1-kappa/l: kappa=2.52 rms 0.055;  free fit a - k/l: a=0.859 k=1.26 rms 0.046
-S3-5: n=36 ell>=6.0: ratio from 0.599 (ell=7.09) to 0.786 (ell=11.65);  fit 1-kappa/l: kappa=2.63 rms 0.031;  free fit a - k/l: a=0.962 k=2.26 rms 0.031
-S3-5: n=34 ell>=8.0: ratio from 0.678 (ell=8.05) to 0.786 (ell=11.65);  fit 1-kappa/l: kappa=2.62 rms 0.031;  free fit a - k/l: a=0.923 k=1.87 rms 0.030
+== r = log2(u)/(x_S ln2 ell^2) fits (x_S: 3.364, 2.830, 2.2025)
+S2-3 ell>=6: n=61 ell>=6.0: ratio from 0.619 (ell=6.29) to 0.827 (ell=12.96);  fit 1-kappa/l: kappa=2.40 rms 0.023;  free fit a - k/l: a=0.971 k=2.13 rms 0.022
+S2-3 ell>=10: n=34 ell>=10.0: ratio from 0.744 (ell=10.00) to 0.827 (ell=12.96);  fit 1-kappa/l: kappa=2.52 rms 0.018;  free fit a - k/l: a=1.047 k=3.06 rms 0.017
+S2-3 ell>=12: n=14 ell>=12.0: ratio from 0.810 (ell=12.00) to 0.827 (ell=12.96);  fit 1-kappa/l: kappa=2.50 rms 0.014;  free fit a - k/l: a=0.711 k=-1.10 rms 0.013
+S2-5 ell>=6: n=71 ell>=6.0: ratio from 0.694 (ell=6.00) to 0.804 (ell=15.41);  fit 1-kappa/l: kappa=2.48 rms 0.033;  free fit a - k/l: a=0.937 k=1.83 rms 0.028
+S2-5 ell>=10: n=53 ell>=10.0: ratio from 0.670 (ell=10.00) to 0.804 (ell=15.41);  fit 1-kappa/l: kappa=2.61 rms 0.024;  free fit a - k/l: a=0.962 k=2.14 rms 0.024
+S2-5 ell>=12: n=36 ell>=12.0: ratio from 0.747 (ell=12.00) to 0.804 (ell=15.41);  fit 1-kappa/l: kappa=2.68 rms 0.017;  free fit a - k/l: a=0.969 k=2.27 rms 0.017
+S3-5 ell>=6: n=99 ell>=6.0: ratio from 0.599 (ell=7.09) to 0.844 (ell=17.98);  fit 1-kappa/l: kappa=2.75 rms 0.031;  free fit a - k/l: a=0.967 k=2.36 rms 0.030
+S3-5 ell>=10: n=81 ell>=10.0: ratio from 0.749 (ell=10.02) to 0.844 (ell=17.98);  fit 1-kappa/l: kappa=2.83 rms 0.028;  free fit a - k/l: a=0.987 k=2.65 rms 0.028
+S3-5 ell>=12: n=63 ell>=12.0: ratio from 0.740 (ell=12.25) to 0.844 (ell=17.98);  fit 1-kappa/l: kappa=2.92 rms 0.028;  free fit a - k/l: a=1.110 k=4.58 rms 0.025
+
+== Independence model H at the exact points (error = predicted - exact, bits)
+-- S2-3
+records compared: 80
+all: n=80 mean error -0.38 bits, sd 2.87, rms 2.89, min -9.8, max 9.5; mean relative error +0.7 %
+ell >= 5: n=69 mean error -0.63 bits, sd 2.69, rms 2.76, min -9.8, max 9.4; mean relative error -+0.0 %
+5 <= ell < 8: n=17 mean error +0.58 bits, sd 3.98, rms 4.03, min -7.1, max 9.4; mean relative error +1.8 %
+8 <= ell < 11: n=26 mean error -1.10 bits, sd 2.21, rms 2.47, min -9.8, max 3.6; mean relative error -0.8 %
+11 <= ell < 14: n=26 mean error -0.95 bits, sd 1.61, rms 1.87, min -8.0, max 0.6; mean relative error -0.4 %
+-- S2-5
+records compared: 84
+all: n=84 mean error -0.72 bits, sd 4.76, rms 4.81, min -22.6, max 28.2; mean relative error -1.6 %
+ell >= 5: n=72 mean error -0.64 bits, sd 5.08, rms 5.12, min -22.6, max 28.2; mean relative error -0.2 %
+5 <= ell < 8: n=8 mean error -0.71 bits, sd 5.75, rms 5.80, min -7.7, max 12.0; mean relative error +0.7 %
+8 <= ell < 11: n=19 mean error -0.18 bits, sd 0.95, rms 0.97, min -1.7, max 1.9; mean relative error -0.1 %
+11 <= ell < 14: n=26 mean error -1.57 bits, sd 4.41, rms 4.68, min -22.6, max 3.1; mean relative error -0.7 %
+ell >= 14: n=19 mean error +0.21 bits, sd 7.37, rms 7.37, min -14.9, max 28.2; mean relative error +0.1 %
+-- S3-5
+records compared: 106
+all: n=106 mean error -1.87 bits, sd 6.41, rms 6.68, min -31.0, max 22.9; mean relative error -1.5 %
+ell >= 5: n=100 mean error -1.90 bits, sd 6.58, rms 6.85, min -31.0, max 22.9; mean relative error -0.9 %
+5 <= ell < 8: n=3 mean error +0.22 bits, sd 0.76, rms 0.79, min -0.6, max 1.2; mean relative error +1.2 %
+8 <= ell < 11: n=29 mean error -1.96 bits, sd 3.41, rms 3.94, min -17.3, max 0.2; mean relative error -1.9 %
+11 <= ell < 14: n=19 mean error +0.37 bits, sd 7.73, rms 7.73, min -24.3, max 22.9; mean relative error +0.5 %
+ell >= 14: n=49 mean error -2.88 bits, sd 7.43, rms 7.97, min -31.0, max 3.1; mean relative error -0.9 %
+
+== Triple {2,3,5} (node cap 2e9, resumed from record 36): 47 records, last u has bits=169.00
+existing rows: 71, matched: 71, mismatched: 0, beyond the record list: 0
+(the 71 found values include the 5 witness-only rows k = 69, 70, 71, 79, 80, which equal the record values)
+records with bounds: 46; negative gap_cnt: 0; gap_cnt min 1.43 max 67.57 mean 33.57; mean over j>=20 38.07; mean gap_D2M 54.00; mean gap_L 100.61; mean u/ell^2 (j>=10) 2.639
+last: j=47 bits=169.00 ell_R=7.000 gap_cnt=44.63 gap_D2M=82.63 gap_L=168.00 ratio u/bound_cnt=0.791
+records compared: 11
+all: n=11 mean error -1.11 bits, sd 5.33, rms 5.44, min -13.3, max 7.4; mean relative error -1.1 %
+Values u_S(1/k) for the k that were not found by the cap-limited search (record with the least j such that delta_j < 1/k):
+j=37 u=2629051569281799064579173738736320000 bits=120.98 delta_j=16104554881/1099511627776
+j=40 u=441318168633646422745290884858546880000 bits=128.38 delta_j=5546388909383/476837158203125
+k = 64..68 -> record 37; k = 76..78 -> record 40 (also the value of k = 79, 80)

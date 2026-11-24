@@ -100,12 +100,20 @@ class P {
     foreach (int p in S) for (int n = 1; ; n++) { BigInteger q = Pow(p, n * n); BigInteger r = k % q; BigInteger dist = BigInteger.Min(r, q - r); if (dist * bd > bn * q) { bn = dist; bd = q; } if (q > 2 * k) break; }
     BigInteger g = BigInteger.GreatestCommonDivisor(bn, bd); if (!g.IsZero) { bn /= g; bd /= g; } return (bn, bd);
   }
+  // modulus q = p^(n^2) attaining P_S(k) (first one found) with p, n and the centred residue of k mod q; valuations of k
+  static string ArgInfo(int[] S, BigInteger k, BigInteger bn, BigInteger bd) {
+    foreach (int p in S) for (int n = 1; ; n++) { BigInteger q = Pow(p, n * n); BigInteger r = k % q; BigInteger dist = BigInteger.Min(r, q - r); if (dist * bd == bn * q) { BigInteger cr = (2 * r < q) ? r : r - q; return $"arg={p}^{n * n} p={p} n={n} res={cr}"; } if (q > 2 * k) break; }
+    return "arg=none";
+  }
+  static string Vals(int[] S, BigInteger k) { var v = new List<string>(); foreach (int p in S) { int e = 0; BigInteger t = k; while (!t.IsZero && t % p == 0) { t /= p; e++; } v.Add(e.ToString()); } return string.Join(",", v); }
   static double Log2B(BigInteger x) { if (x.Sign <= 0) return double.NegativeInfinity; int sh = Math.Max(0, (int)x.GetBitLength() - 60); return sh + Math.Log2((double)(x >> sh)); }
   static void Main(string[] args) {
     int[] S = args[0].Split(',').Select(int.Parse).ToArray(); int maxBits = int.Parse(args[1]); nodeCap = args.Length > 2 ? long.Parse(args[2]) : 200000000L;
     string Sname = "{" + string.Join(",", S) + "}"; var sw0 = Stopwatch.StartNew();
-    BigInteger k = 1; var (num, den) = PS(S, k); int j = 1;
-    Console.WriteLine($"S={Sname} j=1 u=1 bits=0.00 delta_j={num}/{den} ell_j={Log2B(den) - Log2B(num):F4}");
+    BigInteger k = 1; int j = 1;
+    if (args.Length > 3 && args[3].StartsWith("resume=")) { var rp = args[3].Substring(7).Split(':'); j = int.Parse(rp[0]); k = BigInteger.Parse(rp[1]); }   // resume=<j>:<k_j>
+    var (num, den) = PS(S, k);
+    Console.WriteLine($"S={Sname} j={j} u={k} bits={Log2B(k):F2} delta_j={num}/{den} ell_j={Log2B(den) - Log2B(num):F4} (start)");
     double[] lg = S.Select(p => Math.Log2(p)).ToArray(); double gA = lg.Sum(l => Math.Sqrt(1.0 / l)); double aS = Math.Max(1.0, gA * gA);
     int exitCode = 0;
     while (k.GetBitLength() < maxBits) {
@@ -120,8 +128,9 @@ class P {
       double eta = Log2B(m); double alpha = a.Sum(), Delta = 0; for (int i = 0; i < S.Length; i++) Delta += (double)a[i] * a[i] * lg[i];
       double Q = eta * eta * gA * gA - 4 * (eta * alpha - Delta - eta); double t = (eta * gA + Math.Sqrt(Math.Max(0, Q))) / 2; double M = Math.Max(0, Math.Ceiling(t * t - eta - Delta));
       double L = Math.Ceiling(aS * eta * eta + aS * eta); double lDm = Log2B(D) + cstar * eta; double ellR = Log2B(den) - Log2B(num); double lu = Log2B(kn);
+      string argInfo = ArgInfo(S, kn, n2, d2), vals = Vals(S, kn), aPrev = string.Join(",", a); BigInteger sA = A, sB = Bd; A = n2; Bd = d2; string aCur = string.Join(",", S.Select(p => Forced(p))); A = sA; Bd = sB;
       j++; k = kn; (num, den) = (n2, d2);
-      Console.WriteLine($"S={Sname} j={j} u={k} bits={lu:F2} delta_j={num}/{den} ell_j={Log2B(den) - Log2B(num):F4} | at delta_{{j-1}}: ell={ellR:F4} m={m} Delta={Delta:F2} cstar={cstar} log2(Dm^c*)={lDm:F2} log2(D2^M)={Delta + M:F2} L={L:F0} coords={qs.Count} nodes={nd} strict={(strict ? 1 : 0)} [{sw.Elapsed.TotalSeconds:F1}s]");
+      Console.WriteLine($"S={Sname} j={j} u={k} bits={lu:F2} delta_j={num}/{den} ell_j={Log2B(den) - Log2B(num):F4} | at delta_{{j-1}}: ell={ellR:F4} m={m} Delta={Delta:F2} cstar={cstar} log2(Dm^c*)={lDm:F2} log2(D2^M)={Delta + M:F2} L={L:F0} coords={qs.Count} nodes={nd} strict={(strict ? 1 : 0)} | {argInfo} v=({vals}) a_prev=({aPrev}) a_cur=({aCur}) [{sw.Elapsed.TotalSeconds:F1}s]");
       if (!strict) { Console.WriteLine("ERROR: P_S(k_{j}) is not below delta_{j-1}"); exitCode = 3; break; }
     }
     Console.WriteLine($"S={Sname} done: {j} records, last u has {k.GetBitLength()} bits, exit={exitCode} [{sw0.Elapsed.TotalSeconds:F1}s]");

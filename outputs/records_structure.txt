@@ -1,0 +1,219 @@
+records_structure.txt - structure of the records (struct.pl, clean.pl); scripts are not part of the supplement
+
+======== S2-3
+records with detail: 80
+n - a_p(delta_j) for the attaining prime p (a_cur = forced exponent of delta_j):
+  p=2: n - a_cur = 0: 5
+  p=2: n - a_cur = 1: 7
+  p=2: n - a_cur = 10: 1
+  p=2: n - a_cur = 11: 3
+  p=2: n - a_cur = 2: 7
+  p=2: n - a_cur = 3: 7
+  p=2: n - a_cur = 4: 1
+  p=2: n - a_cur = 5: 2
+  p=2: n - a_cur = 6: 2
+  p=2: n - a_cur = 7: 2
+  p=2: n - a_cur = 8: 1
+  p=3: n - a_cur = 0: 3
+  p=3: n - a_cur = 1: 9
+  p=3: n - a_cur = 2: 5
+  p=3: n - a_cur = 3: 8
+  p=3: n - a_cur = 4: 4
+  p=3: n - a_cur = 5: 5
+  p=3: n - a_cur = 6: 2
+  p=3: n - a_cur = 7: 2
+  p=3: n - a_cur = 8: 4
+n - a_p(delta_{j-1}):
+  p=2: n - a_prev = 1: 12
+  p=2: n - a_prev = 10: 1
+  p=2: n - a_prev = 11: 3
+  p=2: n - a_prev = 2: 7
+  p=2: n - a_prev = 3: 7
+  p=2: n - a_prev = 4: 1
+  p=2: n - a_prev = 5: 2
+  p=2: n - a_prev = 6: 2
+  p=2: n - a_prev = 7: 2
+  p=2: n - a_prev = 8: 1
+  p=3: n - a_prev = 1: 11
+  p=3: n - a_prev = 2: 6
+  p=3: n - a_prev = 3: 8
+  p=3: n - a_prev = 4: 4
+  p=3: n - a_prev = 5: 5
+  p=3: n - a_prev = 6: 2
+  p=3: n - a_prev = 7: 2
+  p=3: n - a_prev = 8: 4
+v_p(k_j) vs a_p(delta_j)^2:
+  v_p(k) < a_cur^2: 8
+  v_p(k) = a_cur^2: 45
+  v_p(k) > a_cur^2: 27
+reduced numerator r' = |res|/p^(v_p(res)) (small values listed, 'large' if more than 3 digits):
+  r'=1: 15
+  r'=2: 2
+  r'=3: 2
+  r'=4: 2
+  r'=5: 2
+  r'=7: 2
+  r'=8: 1
+  r'=39: 1
+  r'=959: 1
+  r'=large: 52
+15 clean records (delta_j = 1/p^m):
+  j=2 p=3 delta=1/3^1 ell=1.5850 bits=1.0
+  j=3 p=2 delta=1/2^2 ell=2.0000 bits=3.6
+  j=8 p=2 delta=1/2^4 ell=4.0000 bits=10.0
+  j=10 p=3 delta=1/3^3 ell=4.7549 bits=18.6
+  j=12 p=2 delta=1/2^5 ell=5.0000 bits=29.2
+  j=23 p=2 delta=1/2^7 ell=7.0000 bits=66.8
+  j=28 p=3 delta=1/3^5 ell=7.9248 bits=89.0
+  j=29 p=2 delta=1/2^8 ell=8.0000 bits=106.0
+  j=42 p=2 delta=1/2^9 ell=9.0000 bits=134.7
+  j=47 p=2 delta=1/2^10 ell=10.0000 bits=170.6
+  j=55 p=2 delta=1/2^11 ell=11.0000 bits=209.3
+  j=58 p=3 delta=1/3^7 ell=11.0947 bits=211.8
+  j=67 p=2 delta=1/2^12 ell=12.0000 bits=268.9
+  j=77 p=3 delta=1/3^8 ell=12.6797 bits=296.1
+  j=81 p=2 delta=1/2^13 ell=13.0000 bits=324.0
+records with ell_j in [L, L+1):
+L=2:4 L=3:1 L=4:4 L=5:8 L=6:3 L=7:6 L=8:13 L=9:5 L=10:8 L=11:12 L=12:14 L=13:1 
+
+======== S2-5
+records with detail: 84
+n - a_p(delta_j) for the attaining prime p (a_cur = forced exponent of delta_j):
+  p=2: n - a_cur = 0: 5
+  p=2: n - a_cur = 1: 7
+  p=2: n - a_cur = 11: 2
+  p=2: n - a_cur = 2: 8
+  p=2: n - a_cur = 3: 6
+  p=2: n - a_cur = 4: 2
+  p=2: n - a_cur = 5: 4
+  p=2: n - a_cur = 6: 3
+  p=2: n - a_cur = 7: 6
+  p=2: n - a_cur = 9: 1
+  p=5: n - a_cur = 0: 2
+  p=5: n - a_cur = 1: 9
+  p=5: n - a_cur = 2: 3
+  p=5: n - a_cur = 3: 5
+  p=5: n - a_cur = 4: 6
+  p=5: n - a_cur = 5: 3
+  p=5: n - a_cur = 6: 3
+  p=5: n - a_cur = 7: 5
+  p=5: n - a_cur = 8: 2
+  p=5: n - a_cur = 9: 2
+n - a_p(delta_{j-1}):
+  p=2: n - a_prev = 1: 12
+  p=2: n - a_prev = 11: 2
+  p=2: n - a_prev = 2: 8
+  p=2: n - a_prev = 3: 6
+  p=2: n - a_prev = 4: 2
+  p=2: n - a_prev = 5: 4
+  p=2: n - a_prev = 6: 3
+  p=2: n - a_prev = 7: 6
+  p=2: n - a_prev = 9: 1
+  p=5: n - a_prev = 1: 11
+  p=5: n - a_prev = 2: 3
+  p=5: n - a_prev = 3: 5
+  p=5: n - a_prev = 4: 6
+  p=5: n - a_prev = 5: 3
+  p=5: n - a_prev = 6: 3
+  p=5: n - a_prev = 7: 5
+  p=5: n - a_prev = 8: 2
+  p=5: n - a_prev = 9: 2
+v_p(k_j) vs a_p(delta_j)^2:
+  v_p(k) < a_cur^2: 7
+  v_p(k) = a_cur^2: 53
+  v_p(k) > a_cur^2: 24
+reduced numerator r' = |res|/p^(v_p(res)) (small values listed, 'large' if more than 3 digits):
+  r'=1: 14
+  r'=2: 2
+  r'=3: 2
+  r'=7: 1
+  r'=9: 1
+  r'=12: 1
+  r'=13: 1
+  r'=14: 1
+  r'=159: 1
+  r'=175: 1
+14 clean records (delta_j = 1/p^m):
+  j=3 p=2 delta=1/2^2 ell=2.0000 bits=2.0
+  j=4 p=5 delta=1/5^1 ell=2.3219 bits=3.8
+  j=5 p=2 delta=1/2^3 ell=3.0000 bits=4.9
+  j=14 p=2 delta=1/2^6 ell=6.0000 bits=29.2
+  j=17 p=5 delta=1/5^3 ell=6.9658 bits=51.0
+  j=18 p=2 delta=1/2^7 ell=7.0000 bits=65.6
+  j=21 p=2 delta=1/2^8 ell=8.0000 bits=72.3
+  j=25 p=2 delta=1/2^9 ell=9.0000 bits=100.0
+  j=32 p=2 delta=1/2^10 ell=10.0000 bits=131.2
+  j=49 p=2 delta=1/2^12 ell=12.0000 bits=206.7
+  j=59 p=2 delta=1/2^13 ell=13.0000 bits=261.2
+  j=65 p=5 delta=1/5^6 ell=13.9316 bits=302.0
+  j=66 p=2 delta=1/2^14 ell=14.0000 bits=304.3
+  j=79 p=2 delta=1/2^15 ell=15.0000 bits=364.2
+records with ell_j in [L, L+1):
+L=2:2 L=3:6 L=4:2 L=5:1 L=6:4 L=7:3 L=8:4 L=9:7 L=10:8 L=11:9 L=12:10 L=13:7 L=14:13 L=15:7 
+
+======== S3-5
+records with detail: 106
+n - a_p(delta_j) for the attaining prime p (a_cur = forced exponent of delta_j):
+  p=3: n - a_cur = 0: 3
+  p=3: n - a_cur = 1: 6
+  p=3: n - a_cur = 10: 3
+  p=3: n - a_cur = 2: 11
+  p=3: n - a_cur = 3: 9
+  p=3: n - a_cur = 4: 4
+  p=3: n - a_cur = 5: 4
+  p=3: n - a_cur = 6: 3
+  p=3: n - a_cur = 8: 6
+  p=3: n - a_cur = 9: 2
+  p=5: n - a_cur = 0: 2
+  p=5: n - a_cur = 1: 12
+  p=5: n - a_cur = 2: 5
+  p=5: n - a_cur = 3: 9
+  p=5: n - a_cur = 4: 10
+  p=5: n - a_cur = 5: 9
+  p=5: n - a_cur = 6: 3
+  p=5: n - a_cur = 7: 2
+  p=5: n - a_cur = 8: 3
+n - a_p(delta_{j-1}):
+  p=3: n - a_prev = 1: 9
+  p=3: n - a_prev = 10: 3
+  p=3: n - a_prev = 2: 10
+  p=3: n - a_prev = 3: 10
+  p=3: n - a_prev = 4: 4
+  p=3: n - a_prev = 5: 3
+  p=3: n - a_prev = 6: 4
+  p=3: n - a_prev = 8: 6
+  p=3: n - a_prev = 9: 2
+  p=5: n - a_prev = 1: 14
+  p=5: n - a_prev = 2: 5
+  p=5: n - a_prev = 3: 9
+  p=5: n - a_prev = 4: 10
+  p=5: n - a_prev = 5: 9
+  p=5: n - a_prev = 6: 3
+  p=5: n - a_prev = 7: 2
+  p=5: n - a_prev = 8: 3
+v_p(k_j) vs a_p(delta_j)^2:
+  v_p(k) < a_cur^2: 5
+  v_p(k) = a_cur^2: 86
+  v_p(k) > a_cur^2: 15
+reduced numerator r' = |res|/p^(v_p(res)) (small values listed, 'large' if more than 3 digits):
+  r'=1: 6
+  r'=2: 5
+  r'=3: 2
+  r'=5: 2
+  r'=6: 1
+  r'=7: 3
+  r'=8: 1
+  r'=11: 2
+  r'=12: 1
+  r'=16: 1
+  r'=18: 1
+  r'=36: 1
+6 clean records (delta_j = 1/p^m):
+  j=2 p=5 delta=1/5^1 ell=2.3219 bits=2.6
+  j=6 p=3 delta=1/3^3 ell=4.7549 bits=9.3
+  j=9 p=3 delta=1/3^5 ell=7.9248 bits=46.0
+  j=20 p=5 delta=1/5^4 ell=9.2877 bits=89.7
+  j=62 p=3 delta=1/3^9 ell=14.2647 bits=246.2
+  j=85 p=5 delta=1/5^7 ell=16.2535 bits=335.4
+records with ell_j in [L, L+1):
+L=2:2 L=3:2 L=4:1 L=5:1 L=6:0 L=7:2 L=8:8 L=9:8 L=10:13 L=11:5 L=12:6 L=13:8 L=14:11 L=15:12 L=16:13 L=17:13 L=18:1 
