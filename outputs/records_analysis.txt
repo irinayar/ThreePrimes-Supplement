@@ -20,16 +20,16 @@ last: j=85 bits=374.62 ell_R=15.415 gap_cnt=49.41 gap_D2M=114.28 gap_L=320.38 ra
 records with bounds: 106; negative gap_cnt: 0; gap_cnt min 0.00 max 55.94 mean 29.54; mean over j>=20 31.94; mean gap_D2M 72.47; mean gap_L 183.38; mean u/ell^2 (j>=10) 1.173
 last: j=107 bits=416.44 ell_R=17.981 gap_cnt=19.42 gap_D2M=102.77 gap_L=302.56 ratio u/bound_cnt=0.955
 
-== r = log2(u)/(x_S ln2 ell^2) fits (x_S: 3.364, 2.830, 2.2025)
-S2-3 ell>=6: n=61 ell>=6.0: ratio from 0.619 (ell=6.29) to 0.827 (ell=12.96);  fit 1-kappa/l: kappa=2.40 rms 0.023;  free fit a - k/l: a=0.971 k=2.13 rms 0.022
+== r = log2(u)/(x_S ln2 ell^2) fits (x_S from its definition: 3.365551949710, 2.831544907828, 2.203326976796 for {2,3}, {2,5}, {3,5}; regenerated 2026-11-24, the first version used the rounded constants 3.364, 2.830, 2.2025)
+S2-3 ell>=6: n=61 ell>=6.0: ratio from 0.618 (ell=6.29) to 0.827 (ell=12.96);  fit 1-kappa/l: kappa=2.40 rms 0.023;  free fit a - k/l: a=0.970 k=2.13 rms 0.022
 S2-3 ell>=10: n=34 ell>=10.0: ratio from 0.744 (ell=10.00) to 0.827 (ell=12.96);  fit 1-kappa/l: kappa=2.52 rms 0.018;  free fit a - k/l: a=1.047 k=3.06 rms 0.017
 S2-3 ell>=12: n=14 ell>=12.0: ratio from 0.810 (ell=12.00) to 0.827 (ell=12.96);  fit 1-kappa/l: kappa=2.50 rms 0.014;  free fit a - k/l: a=0.711 k=-1.10 rms 0.013
-S2-5 ell>=6: n=71 ell>=6.0: ratio from 0.694 (ell=6.00) to 0.804 (ell=15.41);  fit 1-kappa/l: kappa=2.48 rms 0.033;  free fit a - k/l: a=0.937 k=1.83 rms 0.028
-S2-5 ell>=10: n=53 ell>=10.0: ratio from 0.670 (ell=10.00) to 0.804 (ell=15.41);  fit 1-kappa/l: kappa=2.61 rms 0.024;  free fit a - k/l: a=0.962 k=2.14 rms 0.024
-S2-5 ell>=12: n=36 ell>=12.0: ratio from 0.747 (ell=12.00) to 0.804 (ell=15.41);  fit 1-kappa/l: kappa=2.68 rms 0.017;  free fit a - k/l: a=0.969 k=2.27 rms 0.017
-S3-5 ell>=6: n=99 ell>=6.0: ratio from 0.599 (ell=7.09) to 0.844 (ell=17.98);  fit 1-kappa/l: kappa=2.75 rms 0.031;  free fit a - k/l: a=0.967 k=2.36 rms 0.030
-S3-5 ell>=10: n=81 ell>=10.0: ratio from 0.749 (ell=10.02) to 0.844 (ell=17.98);  fit 1-kappa/l: kappa=2.83 rms 0.028;  free fit a - k/l: a=0.987 k=2.65 rms 0.028
-S3-5 ell>=12: n=63 ell>=12.0: ratio from 0.740 (ell=12.25) to 0.844 (ell=17.98);  fit 1-kappa/l: kappa=2.92 rms 0.028;  free fit a - k/l: a=1.110 k=4.58 rms 0.025
+S2-5 ell>=6: n=71 ell>=6.0: ratio from 0.693 (ell=6.00) to 0.803 (ell=15.41);  fit 1-kappa/l: kappa=2.49 rms 0.033;  free fit a - k/l: a=0.936 k=1.83 rms 0.028
+S2-5 ell>=10: n=53 ell>=10.0: ratio from 0.670 (ell=10.00) to 0.803 (ell=15.41);  fit 1-kappa/l: kappa=2.61 rms 0.024;  free fit a - k/l: a=0.962 k=2.13 rms 0.024
+S2-5 ell>=12: n=36 ell>=12.0: ratio from 0.746 (ell=12.00) to 0.803 (ell=15.41);  fit 1-kappa/l: kappa=2.69 rms 0.017;  free fit a - k/l: a=0.969 k=2.26 rms 0.017
+S3-5 ell>=6: n=99 ell>=6.0: ratio from 0.599 (ell=7.09) to 0.843 (ell=17.98);  fit 1-kappa/l: kappa=2.75 rms 0.031;  free fit a - k/l: a=0.966 k=2.36 rms 0.030
+S3-5 ell>=10: n=81 ell>=10.0: ratio from 0.749 (ell=10.02) to 0.843 (ell=17.98);  fit 1-kappa/l: kappa=2.83 rms 0.028;  free fit a - k/l: a=0.986 k=2.65 rms 0.028
+S3-5 ell>=12: n=63 ell>=12.0: ratio from 0.739 (ell=12.25) to 0.843 (ell=17.98);  fit 1-kappa/l: kappa=2.93 rms 0.028;  free fit a - k/l: a=1.110 k=4.58 rms 0.025
 
 == Independence model H at the exact points (error = predicted - exact, bits)
 -- S2-3
